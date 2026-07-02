@@ -23,9 +23,9 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at https://skyfire-
-   xyz.github.io/kyapay-ietf-draft/draft-skyfire-id-verification.html.
-   Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-skyfire-id-verification/.
+   xyz.github.io/draft-skyfire-id-verification/draft-skyfire-id-
+   verification.html.  Status information for this document may be found
+   at https://datatracker.ietf.org/doc/draft-skyfire-id-verification/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/skyfire-xyz/draft-skyfire-id-verification.
@@ -140,8 +140,9 @@ Table of Contents
    phy:  Physical ID Document verification (for example via a real time
       capture of the front and back of DL or Passport photo page)
 
-   oth:  Other Document verification (for example via bank statements,
-      financial statements, government issued papers, etc.)
+   sec:  Secondary Document verification (for example via bank
+      statements, financial statements, utility bills, government-issued
+      papers, etc.)
 
 4.  Security Considerations
 
@@ -279,11 +280,11 @@ Table of Contents
 
    *  Reference: (#ivmValues) of this specification
 
-6.2.2.4.  "oth" Method
+6.2.2.4.  "sec" Method
 
-   *  Identity Verification Method Name: oth
+   *  Identity Verification Method Name: sec
 
-   *  Identity Verification Method Description: Other Document
+   *  Identity Verification Method Description: Secondary Document
       verification
 
    *  Change Controller: IETF
