@@ -1,7 +1,7 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-02T00:41:46.847436+00:00",
-  "repo": "skyfire-xyz/draft-skyfire-id-verification",
+  "timestamp": "2026-07-05T00:35:58.476734+00:00",
+  "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
       "name": "bug",
@@ -49,6 +49,86 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOTI8nP88AAAABHm5lhw",
+      "title": "Does this have to be limited to JWTs?",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/1",
+      "state": "CLOSED",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/blob/efc37eb9653a320e9197c19109c96a600132d71c/draft-skyfire-oauth-id-verification.md?plain=1#L86\n\nHi @selfissued Does the universe of usage have to be JWTs?",
+      "createdAt": "2026-07-03T18:11:49Z",
+      "updatedAt": "2026-07-03T21:26:35Z",
+      "closedAt": "2026-07-03T21:21:04Z",
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In theory, once the values are in the registry, they could also be used in other contexts.  Another specification could define such usage.  For instance, a spec could define their use in CWTs https://datatracker.ietf.org/doc/html/rfc8392.  But the purpose of this spec is defining the JWT claim and the values to use within it.",
+          "createdAt": "2026-07-03T21:21:04Z",
+          "updatedAt": "2026-07-03T21:21:04Z"
+        },
+        {
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Makes sense \ud83d\udc4d ",
+          "createdAt": "2026-07-03T21:26:35Z",
+          "updatedAt": "2026-07-03T21:26:35Z"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOTI8nP88AAAABHm5_cA",
+      "title": "\"may\" > \"many\"",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/2",
+      "state": "CLOSED",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/blob/efc37eb9653a320e9197c19109c96a600132d71c/draft-skyfire-oauth-id-verification.md?plain=1#L99\n\n\"In may ways, ...\" > \"In many ways, ...\"",
+      "createdAt": "2026-07-03T18:13:12Z",
+      "updatedAt": "2026-07-03T20:20:55Z",
+      "closedAt": "2026-07-03T20:20:55Z",
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed by https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/commit/2efdaf3e519bde6460851031dbce89da15714758",
+          "createdAt": "2026-07-03T20:20:55Z",
+          "updatedAt": "2026-07-03T20:20:55Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOTI8nP88AAAABHm6gsw",
+      "title": "Add \"as\"",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/3",
+      "state": "CLOSED",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/blob/efc37eb9653a320e9197c19109c96a600132d71c/draft-skyfire-oauth-id-verification.md?plain=1#L103\n\n\"..., identity verification methods,...\" > \"..., as identity verification methods,...\"\n\n@selfissued ",
+      "createdAt": "2026-07-03T18:14:49Z",
+      "updatedAt": "2026-07-03T20:21:06Z",
+      "closedAt": "2026-07-03T20:21:06Z",
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed by https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/commit/2efdaf3e519bde6460851031dbce89da15714758",
+          "createdAt": "2026-07-03T20:21:06Z",
+          "updatedAt": "2026-07-03T20:21:06Z"
+        }
+      ]
+    }
+  ],
   "pulls": []
 }
