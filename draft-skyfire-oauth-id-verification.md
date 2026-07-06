@@ -82,8 +82,8 @@ for declaring how the person's identity was verified.
 It also creates a registry for Identity Verification Methods Values
 and initializes the registry with the values defined in this specification.
 
-While this claim and values are general purpose and can be used in any
-JSON Web Token (JWT) {{RFC7519}},
+While this claim and values are general purpose
+and can be used in any JSON Web Token (JWT) {{RFC7519}},
 one use case for them is use in KYAPay tokens {{?I-D.skyfire-oauth-kyapay-token}}.
 
 
