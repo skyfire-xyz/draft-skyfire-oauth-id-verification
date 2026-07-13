@@ -1,0 +1,385 @@
+
+
+
+
+Web Authorization Protocol                                    A. Agarwal
+Internet-Draft                                      Skyfire Systems Inc.
+Intended status: Standards Track                                M. Jones
+Expires: 14 January 2027                          Self-Issued Consulting
+                                                                  N. Ali
+                                                                Experian
+                                                               S. Thumma
+                                                                  Akamai
+                                                            13 July 2026
+
+
+                  Identity Verification Methods Values
+               draft-skyfire-oauth-id-verification-latest
+
+Abstract
+
+   Knowing how a person's identity was verified can be important when
+   making trust decisions.  This specification defines a claim and
+   values for declaring how the person's identity was verified.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at https://skyfire-
+   xyz.github.io/draft-skyfire-oauth-id-verification/draft-skyfire-
+   oauth-id-verification.html.  Status information for this document may
+   be found at https://datatracker.ietf.org/doc/draft-skyfire-oauth-id-
+   verification/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 14 January 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  Identity Verification Methods
+     3.1.  "ivm" (Identity Verification Methods) Claim
+     3.2.  Identity Verification Method Values
+       3.2.1.  "dbv" (Database Verification of PII) Method
+       3.2.2.  "dig" (Digital ID Document Verification) Method
+       3.2.3.  "phy" (Physical ID Document Verification) Method
+       3.2.4.  "sec" (Secondary Document Verification) Method
+   4.  Security Considerations
+   5.  Privacy Considerations
+   6.  IANA Considerations
+     6.1.  JSON Web Token Claims Registration
+       6.1.1.  "ivm" Claim
+     6.2.  Identity Verification Methods Registry
+       6.2.1.  Registration Template
+       6.2.2.  Initial Registry Contents
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
+   Document History
+   Authors' Addresses
+
+1.  Introduction
+
+   Knowing how a person's identity was verified can be important when
+   making trust decisions.  This specification defines the Identity
+   Verification Methods (ivm) claim and values for it for declaring how
+   the person's identity was verified.  It also creates a registry for
+   Identity Verification Methods Values and initializes the registry
+   with the values defined in this specification.
+
+   While this claim and values are general purpose and can be used in
+   any JSON Web Token (JWT) [RFC7519], one use case for them is use in
+   KYAPay tokens [I-D.skyfire-oauth-kyapay-token].
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Identity Verification Methods
+
+   This section defines the "ivm" (Identity Verification Methods claim
+   and values used with it to indicate that particular identity
+   verification methods were used.  In many ways, this parallels the
+   "amr" (Authentication Methods References) claim defined in
+   [OpenID.Core].  Like "amr", "ivm" is a JWT claim whose value is an
+   array that lists a set of methods that were used, in this case, as
+   identity verification methods, rather than authentication method
+   references.
+
+3.1.  "ivm" (Identity Verification Methods) Claim
+
+   The "ivm" (Identity Verification Methods claim is a JSON array of
+   case-sensitive strings that are identifiers for identity verification
+   methods used.  For instance, values might indicate that both physical
+   document verification and database PII verification methods were
+   used.  Values used in the "ivm" claim SHOULD be from those registered
+   in the IANA "Identity Verification Methods" registry established by
+   (#ivmRegistry); parties using this claim will need to agree upon the
+   meanings of any unregistered values used, which may be context
+   specific.
+
+3.2.  Identity Verification Method Values
+
+   The following Identity Verification Method values are defined by this
+   specification.
+
+3.2.1.  "dbv" (Database Verification of PII) Method
+
+   dbv:  Database Verification of PII (match of name/address/dob/ssn/nid
+      etc. in consumer reporting data sources)
+
+3.2.2.  "dig" (Digital ID Document Verification) Method
+
+   dig:  Digital ID Document Verification (for example Mobile Driver's
+      Licenses)
+
+3.2.3.  "phy" (Physical ID Document Verification) Method
+
+   phy:  Physical ID Document Verification (for example via a real time
+      capture of the front and back of DL or Passport photo page)
+
+3.2.4.  "sec" (Secondary Document Verification) Method
+
+   sec:  Secondary Document Verification (for example via bank
+      statements, financial statements, utility bills, government-issued
+      papers, etc.)
+
+4.  Security Considerations
+
+   The security considerations defined in JSON Web Token (JWT) [RFC7519]
+   apply to this specification.
+
+5.  Privacy Considerations
+
+   The privacy considerations defined in JSON Web Token (JWT) [RFC7519]
+   apply to this specification.
+
+6.  IANA Considerations
+
+6.1.  JSON Web Token Claims Registration
+
+   This specification registers the following Claim in the IANA "JSON
+   Web Token Claims" [IANA.JWT.Claims] established by [RFC7519].
+
+6.1.1.  "ivm" Claim
+
+   *  Claim Name: ivm
+
+   *  Claim Description: Identity Verification Methods
+
+   *  Change Controller: Michael B.  Jones - michael_b_jones@hotmail.com
+
+   *  Reference: (#ivmClaim) of this specification
+
+6.2.  Identity Verification Methods Registry
+
+   This specification establishes the IANA "Identity Verification
+   Methods" registry for ivm claim array element values.  The registry
+   records the Identity Verification Method value and a reference to the
+   specification that defines it.  This specification registers the
+   Identity Verification Method values defined in (#ivmValues).
+
+   Values are registered on an Expert Review [RFC5226] basis after a
+   three-week review period on the <jwt-reg-review@ietf.org> mailing
+   list, on the advice of one or more Designated Experts.  To increase
+   potential interoperability, the Designated Experts are requested to
+   encourage registrants to provide the location of a publicly
+   accessible specification defining the values being registered, so
+   that their intended usage can be more easily understood.
+
+   Registration requests sent to the mailing list for review should use
+   an appropriate subject (e.g., "Request to register Identity
+   Verification Method value: example").
+
+   Within the review period, the Designated Experts will either approve
+   or deny the registration request, communicating this decision to the
+   review list and IANA.  Denials should include an explanation and, if
+   applicable, suggestions as to how to make the request successful.
+   Registration requests that are undetermined for a period longer than
+   21 days can be brought to the IESG's attention (using the
+   iesg@ietf.org (mailto:iesg@ietf.org) mailing list) for resolution.
+
+   IANA must only accept registry updates from the Designated Experts
+   and should direct all requests for registration to the review mailing
+   list.
+
+   It is suggested that the same Designated Experts evaluate these
+   registration requests as those who evaluate registration requests for
+   the IANA "Authentication Method Reference Values" registry
+   [IANA.AMR].
+
+   Criteria that should be applied by the Designated Experts include
+   determining whether the proposed registration duplicates existing
+   functionality; whether it is likely to be of general applicability or
+   whether it is useful only for a single application; whether the value
+   is actually being used; and whether the registration description is
+   clear.
+
+6.2.1.  Registration Template
+
+   Identity Verification Method Name:  The name requested (e.g., "dig")
+      for the authentication method or family of closely related
+      authentication methods.  Because a core goal of this specification
+      is for the resulting representations to be compact, it is
+      RECOMMENDED that the name be short -- that is, not to exceed 8
+      characters without a compelling reason to do so.  To facilitate
+      interoperability, the name must use only printable ASCII
+      characters excluding double quote ('"') and backslash ('\') (the
+      Unicode characters with code points U+0021, U+0023 through U+005B,
+      and U+005D through U+007E).  This name is case sensitive.  Names
+      may not match other registered names in a case-insensitive manner
+      unless the Designated Experts state that there is a compelling
+      reason to allow an exception.
+
+   Identity Verification Method Description:  Brief description of the
+      Identity Verification Method (e.g., "Physical ID Document
+      verification").
+
+   Change Controller:  For Standards Track RFCs, state "IETF".  For
+      others, give the name of the responsible party.  Other details
+      (e.g., postal address, email address, home page URI) may also be
+      included.
+
+   Specification Document(s):  Reference to the document or documents
+      that specify the parameter, preferably including URIs that can be
+      used to retrieve copies of the documents.  An indication of the
+      relevant sections may also be included but is not required.
+
+6.2.2.  Initial Registry Contents
+
+6.2.2.1.  "dbv" Method
+
+   *  Identity Verification Method Name: dbv
+
+   *  Identity Verification Method Description: Database Verification of
+      PII
+
+   *  Change Controller: IETF
+
+   *  Reference: (#dbvMethod) of this specification
+
+6.2.2.2.  "dig" Method
+
+   *  Identity Verification Method Name: dig
+
+   *  Identity Verification Method Description: Digital ID Document
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Reference: (#digMethod) of this specification
+
+6.2.2.3.  "phy" Method
+
+   *  Identity Verification Method Name: phy
+
+   *  Identity Verification Method Description: Physical ID Document
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Reference: (#phyMethod) of this specification
+
+6.2.2.4.  "sec" Method
+
+   *  Identity Verification Method Name: sec
+
+   *  Identity Verification Method Description: Secondary Document
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Reference: (#secMethod) of this specification
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
+              <https://www.rfc-editor.org/rfc/rfc7519>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+7.2.  Informative References
+
+   [I-D.skyfire-oauth-kyapay-token]
+              Agarwal, A. and M. B. Jones, "KYAPay Token", Work in
+              Progress, Internet-Draft, draft-skyfire-oauth-kyapay-
+              token-00, 5 July 2026,
+              <https://datatracker.ietf.org/doc/html/draft-skyfire-
+              oauth-kyapay-token-00>.
+
+   [IANA.AMR] IANA, "Authentication Method Reference Values", n.d.,
+              <https://www.iana.org/assignments/authentication-method-
+              reference-values>.
+
+   [IANA.JWT.Claims]
+              IANA, "JSON Web Token Claims", n.d.,
+              <https://www.iana.org/assignments/jwt>.
+
+   [OpenID.Core]
+              Sakimura, N., Bradley, J., Jones, M. B., Medeiros, B. de.,
+              and C. Mortimore, "OpenID Connect Core 1.0 incorporating
+              errata set 2", 15 December 2023,
+              <https://openid.net/specs/openid-connect-core-1_0.html>.
+
+   [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
+              IANA Considerations Section in RFCs", RFC 5226,
+              DOI 10.17487/RFC5226, May 2008,
+              <https://www.rfc-editor.org/rfc/rfc5226>.
+
+Document History
+
+   [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -00
+
+   *  Initial draft.
+
+Authors' Addresses
+
+   Ankit Agarwal
+   Skyfire Systems Inc.
+   Email: ankit_agarwal@yahoo.com
+   URI:   https://skyfire.xyz
+
+
+   Michael B. Jones
+   Self-Issued Consulting
+   Email: michael_b_jones@hotmail.com
+   URI:   https://self-issued.info/
+
+
+   Nash Ali
+   Experian
+   Email: nash.ali@experian.com
+
+
+   Srini Thumma
+   Akamai
+   Email: sthumma@akamai.com
