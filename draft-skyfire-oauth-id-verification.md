@@ -37,6 +37,14 @@ author:
   organization: Self-Issued Consulting
   email: michael_b_jones@hotmail.com
   uri: https://self-issued.info/
+-
+  name: Nash Ali
+  organization: Experian
+  email: nash.ali@experian.com
+-
+  name: Srinivasa Thumma
+  organization: Akamai
+  email: sthumma@akamai.com
 
 normative:
   RFC7519:
