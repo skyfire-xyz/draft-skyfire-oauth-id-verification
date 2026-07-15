@@ -133,7 +133,20 @@ are defined by this specification.
 ### "dbv" (Database Verification of PII) Method {#dbvMethod}
 
 dbv:
-: Database Verification of PII (match of name/address/dob/ssn/nid etc. in consumer reporting data sources)
+: Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
+  using an unspecified number of consumer reporting data sources
+
+### "dbv1" (Database Verification of PII One Source) Method {#dbv1Method}
+
+dbv1:
+: Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
+  using one consumer reporting data source
+
+### "dbvm" (Database Verification of PII Multiple Sources) Method {#dbvmMethod}
+
+dbvm:
+: Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
+  using Multiple consumer reporting data sources
 
 ### "dig" (Digital ID Document Verification) Method {#digMethod}
 
@@ -265,6 +278,20 @@ Specification Document(s):
 * Identity Verification Method Description: Database Verification of PII
 * Change Controller: IETF
 * Reference: (#dbvMethod) of this specification
+
+#### "dbv1" Method
+
+* Identity Verification Method Name: dbv1
+* Identity Verification Method Description: Database Verification of PII One Source
+* Change Controller: IETF
+* Reference: (#dbv1Method) of this specification
+
+#### "dbvm" Method
+
+* Identity Verification Method Name: dbvm
+* Identity Verification Method Description: Database Verification of PII Multiple Sources
+* Change Controller: IETF
+* Reference: (#dbvmMethod) of this specification
 
 #### "dig" Method
 
