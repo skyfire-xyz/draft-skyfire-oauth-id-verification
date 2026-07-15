@@ -102,7 +102,7 @@ one use case for them is use in KYAPay tokens {{?I-D.skyfire-oauth-kyapay-token}
 
 # Identity Verification Methods {#ivm}
 
-This section defines the "ivm" (Identity Verification Methods claim and
+This section defines the "ivm" (Identity Verification Methods) claim and
 values used with it to indicate that particular identity verification methods
 were used.
 In many ways, this parallels the "amr" (Authentication Methods References) claim
@@ -114,7 +114,7 @@ rather than authentication method references.
 
 ## "ivm" (Identity Verification Methods) Claim {#ivmClaim}
 
-The "ivm" (Identity Verification Methods claim is a
+The "ivm" (Identity Verification Methods) claim is a
 JSON array of case-sensitive strings that are identifiers for
 identity verification methods used.
 For instance, values might indicate that both
