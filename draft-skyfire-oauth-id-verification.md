@@ -163,6 +163,16 @@ phy:
 sec:
 : Secondary Document Verification (for example via bank statements, financial statements, utility bills, government-issued papers, etc.)
 
+## "inp" (In-person Verification) Method {#inpMethod}
+
+inp:
+: In-person Verification
+
+## "vid" (Video Verification) Method {#vidMethod}
+
+vid:
+: Video Verification (live video interview)
+
 
 # Security Considerations
 
@@ -313,6 +323,20 @@ Specification Document(s):
 * Identity Verification Method Description: Secondary Document Verification
 * Change Controller: IETF
 * Reference: (#secMethod) of this specification
+
+### "inp" Method
+
+* Identity Verification Method Reference Name: inp
+* Identity Verification Method Reference Description: In-person Verification
+* Change Controller: IETF
+* Specification Document(s): (#inpMethod) of this specification
+
+### "vid" Method
+
+* Identity Verification Method Reference Name: vid
+* Identity Verification Method Reference Description: Video Verification
+* Change Controller: IETF
+* Specification Document(s): (#vidMethod) of this specification
 
 
 --- back
