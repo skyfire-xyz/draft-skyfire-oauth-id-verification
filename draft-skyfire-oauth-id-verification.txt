@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 16 January 2027                          Self-Issued Consulting
+Expires: 17 January 2027                          Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                            15 July 2026
+                                                            16 July 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 January 2027.
+   This Internet-Draft will expire on 17 January 2027.
 
 Copyright Notice
 
@@ -80,6 +80,8 @@ Table of Contents
        3.2.4.  "dig" (Digital ID Document Verification) Method
        3.2.5.  "phy" (Physical ID Document Verification) Method
        3.2.6.  "sec" (Secondary Document Verification) Method
+     3.3.  "inp" (In-person Verification) Method
+     3.4.  "vid" (Video Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
@@ -88,6 +90,8 @@ Table of Contents
      6.2.  Identity Verification Methods Registry
        6.2.1.  Registration Template
        6.2.2.  Initial Registry Contents
+       6.2.3.  "inp" Method
+       6.2.4.  "vid" Method
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -174,6 +178,14 @@ Table of Contents
    sec:  Secondary Document Verification (for example via bank
       statements, financial statements, utility bills, government-issued
       papers, etc.)
+
+3.3.  "inp" (In-person Verification) Method
+
+   inp:  In-person Verification
+
+3.4.  "vid" (Video Verification) Method
+
+   vid:  Video Verification (live video interview)
 
 4.  Security Considerations
 
@@ -343,6 +355,28 @@ Table of Contents
    *  Change Controller: IETF
 
    *  Reference: (#secMethod) of this specification
+
+6.2.3.  "inp" Method
+
+   *  Identity Verification Method Reference Name: inp
+
+   *  Identity Verification Method Reference Description: In-person
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): (#inpMethod) of this specification
+
+6.2.4.  "vid" Method
+
+   *  Identity Verification Method Reference Name: vid
+
+   *  Identity Verification Method Reference Description: Video
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): (#vidMethod) of this specification
 
 7.  References
 
