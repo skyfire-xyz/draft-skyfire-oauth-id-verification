@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-14T00:27:25.093048+00:00",
+  "timestamp": "2026-07-16T00:28:41.774013+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -136,24 +136,26 @@
       "id": "PR_kwDOTI8nP87xSnAO",
       "title": "Add Nash and Srini",
       "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "selfissued",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Cc: @experian-nashali @sthumma33",
       "createdAt": "2026-07-13T22:17:13Z",
-      "updatedAt": "2026-07-13T23:18:08Z",
+      "updatedAt": "2026-07-14T16:20:57Z",
       "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "baseRefName": "main",
       "baseRefOid": "eadef012508d1798d109172ac185cdf0ef0028f6",
       "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "headRefName": "mbj-add-authors",
-      "headRefOid": "53cdcc3dca38024da73ed6b8a3e85ac91c381829",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "8fb5eea9b7a102f69044b5692ed7ed44b70c26d2",
+      "closedAt": "2026-07-14T16:20:57Z",
+      "mergedAt": "2026-07-14T16:20:57Z",
+      "mergedBy": "selfissued",
+      "mergeCommit": {
+        "oid": "352b41c38d4f5e0bccbf6799c3dddede21322724"
+      },
       "comments": [],
       "reviews": [
         {
@@ -167,6 +169,88 @@
           "body": "",
           "createdAt": "2026-07-13T23:18:08Z",
           "updatedAt": "2026-07-13T23:18:08Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABF5id-Q",
+          "commit": {
+            "abbreviatedOid": "53cdcc3"
+          },
+          "author": "sthumma33",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-07-14T04:28:57Z",
+          "updatedAt": "2026-07-14T04:28:57Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Srinivasa Thumma",
+              "createdAt": "2026-07-14T04:28:57Z",
+              "updatedAt": "2026-07-14T04:28:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABF5lSnw",
+          "commit": {
+            "abbreviatedOid": "53cdcc3"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-07-14T04:41:53Z",
+          "updatedAt": "2026-07-14T04:41:53Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Corrected",
+              "createdAt": "2026-07-14T04:41:53Z",
+              "updatedAt": "2026-07-14T04:41:53Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOTI8nP87x2Fw6",
+      "title": "Expand dbv to also have dbv1 and dbvm",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/5",
+      "state": "MERGED",
+      "author": "selfissued",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Database verification from a single database has different compliance properties than database verification from multiple databases, as pointed out by @experian-nashali.  Added the `dbv1` (one database) and `dbvm` (multiple databases) methods to enable this distinction to be made.\r\n\r\nNote that keeping `dbv` with an unspecified number of databases parallels the relationship between `pop`, `swk`, and `hwk`.\r\n\r\n\r\n",
+      "createdAt": "2026-07-15T03:24:38Z",
+      "updatedAt": "2026-07-15T16:13:19Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "7d685c5fd094f243adbac348613af1863b2ac283",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "mbj-expand-dbv",
+      "headRefOid": "7ed9675cc1d0d82f3e4409c5e3eef400fa984b51",
+      "closedAt": "2026-07-15T16:13:19Z",
+      "mergedAt": "2026-07-15T16:13:19Z",
+      "mergedBy": "selfissued",
+      "mergeCommit": {
+        "oid": "48ff4a0e1167ab2e11e6f38ac76468b8a1aa6b0b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABGC3Oww",
+          "commit": {
+            "abbreviatedOid": "7ed9675"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-15T03:32:54Z",
+          "updatedAt": "2026-07-15T03:32:54Z",
           "comments": []
         }
       ]
