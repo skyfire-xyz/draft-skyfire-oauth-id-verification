@@ -90,8 +90,6 @@ Table of Contents
      6.2.  Identity Verification Methods Registry
        6.2.1.  Registration Template
        6.2.2.  Initial Registry Contents
-       6.2.3.  "inp" Method
-       6.2.4.  "vid" Method
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -356,7 +354,7 @@ Table of Contents
 
    *  Reference: Section 3.2.6 of this specification
 
-6.2.3.  "inp" Method
+6.2.2.7.  "inp" Method
 
    *  Identity Verification Method Reference Name: inp
 
@@ -367,7 +365,7 @@ Table of Contents
 
    *  Specification Document(s): Section 3.3 of this specification
 
-6.2.4.  "vid" Method
+6.2.2.8.  "vid" Method
 
    *  Identity Verification Method Reference Name: vid
 
