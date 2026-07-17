@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 17 January 2027                          Self-Issued Consulting
+Expires: 18 January 2027                          Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                            16 July 2026
+                                                            17 July 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 January 2027.
+   This Internet-Draft will expire on 18 January 2027.
 
 Copyright Notice
 
@@ -138,7 +138,7 @@ Table of Contents
    document verification and database PII verification methods were
    used.  Values used in the "ivm" claim SHOULD be from those registered
    in the IANA "Identity Verification Methods" registry established by
-   (#ivmRegistry); parties using this claim will need to agree upon the
+   Section 6.2; parties using this claim will need to agree upon the
    meanings of any unregistered values used, which may be context
    specific.
 
@@ -212,7 +212,7 @@ Table of Contents
 
    *  Change Controller: Michael B.  Jones - michael_b_jones@hotmail.com
 
-   *  Reference: (#ivmClaim) of this specification
+   *  Reference: Section 3.1 of this specification
 
 6.2.  Identity Verification Methods Registry
 
@@ -220,7 +220,7 @@ Table of Contents
    Methods" registry for ivm claim array element values.  The registry
    records the Identity Verification Method value and a reference to the
    specification that defines it.  This specification registers the
-   Identity Verification Method values defined in (#ivmValues).
+   Identity Verification Method values defined in Section 3.2.
 
    Values are registered on an Expert Review [RFC5226] basis after a
    three-week review period on the <jwt-reg-review@ietf.org> mailing
@@ -299,7 +299,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#dbvMethod) of this specification
+   *  Reference: Section 3.2.1 of this specification
 
 6.2.2.2.  "dbv1" Method
 
@@ -310,7 +310,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#dbv1Method) of this specification
+   *  Reference: Section 3.2.2 of this specification
 
 6.2.2.3.  "dbvm" Method
 
@@ -321,7 +321,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#dbvmMethod) of this specification
+   *  Reference: Section 3.2.3 of this specification
 
 6.2.2.4.  "dig" Method
 
@@ -332,7 +332,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#digMethod) of this specification
+   *  Reference: Section 3.2.4 of this specification
 
 6.2.2.5.  "phy" Method
 
@@ -343,7 +343,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#phyMethod) of this specification
+   *  Reference: Section 3.2.5 of this specification
 
 6.2.2.6.  "sec" Method
 
@@ -354,7 +354,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#secMethod) of this specification
+   *  Reference: Section 3.2.6 of this specification
 
 6.2.3.  "inp" Method
 
@@ -365,7 +365,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): (#inpMethod) of this specification
+   *  Specification Document(s): Section 3.3 of this specification
 
 6.2.4.  "vid" Method
 
@@ -376,7 +376,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): (#vidMethod) of this specification
+   *  Specification Document(s): Section 3.4 of this specification
 
 7.  References
 
