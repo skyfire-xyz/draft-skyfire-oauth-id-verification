@@ -51,6 +51,7 @@ normative:
 
 informative:
   RFC5226:
+  I-D.skyfire-oauth-kyapay-token:
   OpenID.Core:
     target: https://openid.net/specs/openid-connect-core-1_0.html
     title: "OpenID Connect Core 1.0 incorporating errata set 2"
@@ -94,7 +95,7 @@ and initializes the registry with the values defined in this specification.
 
 While this claim and values are general purpose
 and can be used in any JSON Web Token (JWT) {{RFC7519}},
-one use case for them is use in KYAPay tokens {{?I-D.skyfire-oauth-kyapay-token}}.
+one use case for them is use in KYAPay tokens {{I-D.skyfire-oauth-kyapay-token}}.
 
 
 # Conventions and Definitions
