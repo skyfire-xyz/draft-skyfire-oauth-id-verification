@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-16T00:28:41.774013+00:00",
+  "timestamp": "2026-07-19T00:29:55.489964+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -251,6 +251,48 @@
           "body": "",
           "createdAt": "2026-07-15T03:32:54Z",
           "updatedAt": "2026-07-15T03:32:54Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOTI8nP87ysXRw",
+      "title": "Add inp and vid methods",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/6",
+      "state": "MERGED",
+      "author": "selfissued",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Moving to \"inp\" and \"vid\" methods here, per today's call.",
+      "createdAt": "2026-07-16T20:19:01Z",
+      "updatedAt": "2026-07-16T23:48:06Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "48ff4a0e1167ab2e11e6f38ac76468b8a1aa6b0b",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "mbj-add-inp-vid",
+      "headRefOid": "36a327ccb3639162dfde7415bc547c0b1feceead",
+      "closedAt": "2026-07-16T23:48:06Z",
+      "mergedAt": "2026-07-16T23:48:06Z",
+      "mergedBy": "selfissued",
+      "mergeCommit": {
+        "oid": "bed85e576ee429af81caf8078c28e4b8443114cb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABGTqs-w",
+          "commit": {
+            "abbreviatedOid": "36a327c"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-16T22:54:08Z",
+          "updatedAt": "2026-07-16T22:54:08Z",
           "comments": []
         }
       ]
