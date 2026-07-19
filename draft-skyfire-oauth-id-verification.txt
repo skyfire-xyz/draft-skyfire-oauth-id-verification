@@ -80,8 +80,8 @@ Table of Contents
        3.2.4.  "dig" (Digital ID Document Verification) Method
        3.2.5.  "phy" (Physical ID Document Verification) Method
        3.2.6.  "sec" (Secondary Document Verification) Method
-     3.3.  "inp" (In-person Verification) Method
-     3.4.  "vid" (Video Verification) Method
+       3.2.7.  "inp" (In-person Verification) Method
+       3.2.8.  "vid" (Video Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
@@ -177,11 +177,11 @@ Table of Contents
       statements, financial statements, utility bills, government-issued
       papers, etc.)
 
-3.3.  "inp" (In-person Verification) Method
+3.2.7.  "inp" (In-person Verification) Method
 
    inp:  In-person Verification
 
-3.4.  "vid" (Video Verification) Method
+3.2.8.  "vid" (Video Verification) Method
 
    vid:  Video Verification (live video interview)
 
@@ -363,7 +363,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3 of this specification
+   *  Specification Document(s): Section 3.2.7 of this specification
 
 6.2.2.8.  "vid" Method
 
@@ -374,7 +374,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.4 of this specification
+   *  Specification Document(s): Section 3.2.8 of this specification
 
 7.  References
 
@@ -424,6 +424,10 @@ Table of Contents
 Document History
 
    [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -01
+
+   *  Added "dbv1", "dbvm", "inp", and "vid" methods.
 
    -00
 
