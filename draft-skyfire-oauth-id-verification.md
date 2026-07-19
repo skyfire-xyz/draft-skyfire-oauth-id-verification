@@ -63,14 +63,16 @@ informative:
       - name: Chuck Mortimore
   IANA.JWT.Claims:
     author:
-    - name: IANA
+    - org: IANA
     target: https://www.iana.org/assignments/jwt
     title: JSON Web Token Claims
+    date: false
   IANA.AMR:
     author:
-    - name: IANA
+    - org: IANA
     target: https://www.iana.org/assignments/authentication-method-reference-values
     title: Authentication Method Reference Values
+    date: false
 
 ...
 
