@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 15 January 2027                          Self-Issued Consulting
+Expires: 4 March 2027                             Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                            14 July 2026
+                                                          31 August 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 January 2027.
+   This Internet-Draft will expire on 4 March 2027.
 
 Copyright Notice
 
@@ -74,9 +74,14 @@ Table of Contents
      3.1.  "ivm" (Identity Verification Methods) Claim
      3.2.  Identity Verification Method Values
        3.2.1.  "dbv" (Database Verification of PII) Method
-       3.2.2.  "dig" (Digital ID Document Verification) Method
-       3.2.3.  "phy" (Physical ID Document Verification) Method
-       3.2.4.  "sec" (Secondary Document Verification) Method
+       3.2.2.  "dbv1" (Database Verification of PII One Source) Method
+       3.2.3.  "dbvm" (Database Verification of PII Multiple Sources)
+               Method
+       3.2.4.  "dig" (Digital ID Document Verification) Method
+       3.2.5.  "phy" (Physical ID Document Verification) Method
+       3.2.6.  "sec" (Secondary Document Verification) Method
+       3.2.7.  "inp" (In-person Verification) Method
+       3.2.8.  "vid" (Video Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
@@ -114,7 +119,7 @@ Table of Contents
 
 3.  Identity Verification Methods
 
-   This section defines the "ivm" (Identity Verification Methods claim
+   This section defines the "ivm" (Identity Verification Methods) claim
    and values used with it to indicate that particular identity
    verification methods were used.  In many ways, this parallels the
    "amr" (Authentication Methods References) claim defined in
@@ -125,13 +130,13 @@ Table of Contents
 
 3.1.  "ivm" (Identity Verification Methods) Claim
 
-   The "ivm" (Identity Verification Methods claim is a JSON array of
+   The "ivm" (Identity Verification Methods) claim is a JSON array of
    case-sensitive strings that are identifiers for identity verification
    methods used.  For instance, values might indicate that both physical
    document verification and database PII verification methods were
    used.  Values used in the "ivm" claim SHOULD be from those registered
    in the IANA "Identity Verification Methods" registry established by
-   (#ivmRegistry); parties using this claim will need to agree upon the
+   Section 6.2; parties using this claim will need to agree upon the
    meanings of any unregistered values used, which may be context
    specific.
 
@@ -142,24 +147,51 @@ Table of Contents
 
 3.2.1.  "dbv" (Database Verification of PII) Method
 
-   dbv:  Database Verification of PII (match of name/address/dob/ssn/nid
-      etc. in consumer reporting data sources)
+   dbv:
+      Database Verification of PII (match of name/address/dob/ssn/nid,
+      etc.) using an unspecified number of consumer reporting data
+      sources
 
-3.2.2.  "dig" (Digital ID Document Verification) Method
+3.2.2.  "dbv1" (Database Verification of PII One Source) Method
 
-   dig:  Digital ID Document Verification (for example Mobile Driver's
+   dbv1:
+      Database Verification of PII (match of name/address/dob/ssn/nid,
+      etc.) using one consumer reporting data source
+
+3.2.3.  "dbvm" (Database Verification of PII Multiple Sources) Method
+
+   dbvm:
+      Database Verification of PII (match of name/address/dob/ssn/nid,
+      etc.) using Multiple consumer reporting data sources
+
+3.2.4.  "dig" (Digital ID Document Verification) Method
+
+   dig:
+      Digital ID Document Verification (for example Mobile Driver's
       Licenses)
 
-3.2.3.  "phy" (Physical ID Document Verification) Method
+3.2.5.  "phy" (Physical ID Document Verification) Method
 
-   phy:  Physical ID Document Verification (for example via a real time
+   phy:
+      Physical ID Document Verification (for example via a real time
       capture of the front and back of DL or Passport photo page)
 
-3.2.4.  "sec" (Secondary Document Verification) Method
+3.2.6.  "sec" (Secondary Document Verification) Method
 
-   sec:  Secondary Document Verification (for example via bank
-      statements, financial statements, utility bills, government-issued
-      papers, etc.)
+   sec:
+      Secondary Document Verification (for example via bank statements,
+      financial statements, utility bills, government-issued papers,
+      etc.)
+
+3.2.7.  "inp" (In-person Verification) Method
+
+   inp:
+      In-person Verification
+
+3.2.8.  "vid" (Video Verification) Method
+
+   vid:
+      Video Verification (live video interview)
 
 4.  Security Considerations
 
@@ -186,7 +218,7 @@ Table of Contents
 
    *  Change Controller: Michael B.  Jones - michael_b_jones@hotmail.com
 
-   *  Reference: (#ivmClaim) of this specification
+   *  Reference: Section 3.1 of this specification
 
 6.2.  Identity Verification Methods Registry
 
@@ -194,7 +226,7 @@ Table of Contents
    Methods" registry for ivm claim array element values.  The registry
    records the Identity Verification Method value and a reference to the
    specification that defines it.  This specification registers the
-   Identity Verification Method values defined in (#ivmValues).
+   Identity Verification Method values defined in Section 3.2.
 
    Values are registered on an Expert Review [RFC5226] basis after a
    three-week review period on the <jwt-reg-review@ietf.org> mailing
@@ -234,33 +266,34 @@ Table of Contents
 
 6.2.1.  Registration Template
 
-   Identity Verification Method Name:  The name requested (e.g., "dig")
-      for the authentication method or family of closely related
-      authentication methods.  Because a core goal of this specification
-      is for the resulting representations to be compact, it is
-      RECOMMENDED that the name be short -- that is, not to exceed 8
-      characters without a compelling reason to do so.  To facilitate
-      interoperability, the name must use only printable ASCII
-      characters excluding double quote ('"') and backslash ('\') (the
-      Unicode characters with code points U+0021, U+0023 through U+005B,
-      and U+005D through U+007E).  This name is case sensitive.  Names
-      may not match other registered names in a case-insensitive manner
-      unless the Designated Experts state that there is a compelling
-      reason to allow an exception.
+   Identity Verification Method Name:
+      The name requested (e.g., "dig") for the authentication method or
+      family of closely related authentication methods.  Because a core
+      goal of this specification is for the resulting representations to
+      be compact, it is RECOMMENDED that the name be short -- that is,
+      not to exceed 8 characters without a compelling reason to do so.
+      To facilitate interoperability, the name must use only printable
+      ASCII characters excluding double quote ('"') and backslash ('\')
+      (the Unicode characters with code points U+0021, U+0023 through
+      U+005B, and U+005D through U+007E).  This name is case sensitive.
+      Names may not match other registered names in a case-insensitive
+      manner unless the Designated Experts state that there is a
+      compelling reason to allow an exception.
 
-   Identity Verification Method Description:  Brief description of the
-      Identity Verification Method (e.g., "Physical ID Document
-      verification").
+   Identity Verification Method Description:
+      Brief description of the Identity Verification Method (e.g.,
+      "Physical ID Document verification").
 
-   Change Controller:  For Standards Track RFCs, state "IETF".  For
-      others, give the name of the responsible party.  Other details
-      (e.g., postal address, email address, home page URI) may also be
-      included.
+   Change Controller:
+      For Standards Track RFCs, state "IETF".  For others, give the name
+      of the responsible party.  Other details (e.g., postal address,
+      email address, home page URI) may also be included.
 
-   Specification Document(s):  Reference to the document or documents
-      that specify the parameter, preferably including URIs that can be
-      used to retrieve copies of the documents.  An indication of the
-      relevant sections may also be included but is not required.
+   Specification Document(s):
+      Reference to the document or documents that specify the parameter,
+      preferably including URIs that can be used to retrieve copies of
+      the documents.  An indication of the relevant sections may also be
+      included but is not required.
 
 6.2.2.  Initial Registry Contents
 
@@ -273,9 +306,31 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#dbvMethod) of this specification
+   *  Reference: Section 3.2.1 of this specification
 
-6.2.2.2.  "dig" Method
+6.2.2.2.  "dbv1" Method
+
+   *  Identity Verification Method Name: dbv1
+
+   *  Identity Verification Method Description: Database Verification of
+      PII One Source
+
+   *  Change Controller: IETF
+
+   *  Reference: Section 3.2.2 of this specification
+
+6.2.2.3.  "dbvm" Method
+
+   *  Identity Verification Method Name: dbvm
+
+   *  Identity Verification Method Description: Database Verification of
+      PII Multiple Sources
+
+   *  Change Controller: IETF
+
+   *  Reference: Section 3.2.3 of this specification
+
+6.2.2.4.  "dig" Method
 
    *  Identity Verification Method Name: dig
 
@@ -284,9 +339,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#digMethod) of this specification
+   *  Reference: Section 3.2.4 of this specification
 
-6.2.2.3.  "phy" Method
+6.2.2.5.  "phy" Method
 
    *  Identity Verification Method Name: phy
 
@@ -295,9 +350,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#phyMethod) of this specification
+   *  Reference: Section 3.2.5 of this specification
 
-6.2.2.4.  "sec" Method
+6.2.2.6.  "sec" Method
 
    *  Identity Verification Method Name: sec
 
@@ -306,7 +361,29 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: (#secMethod) of this specification
+   *  Reference: Section 3.2.6 of this specification
+
+6.2.2.7.  "inp" Method
+
+   *  Identity Verification Method Reference Name: inp
+
+   *  Identity Verification Method Reference Description: In-person
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.7 of this specification
+
+6.2.2.8.  "vid" Method
+
+   *  Identity Verification Method Reference Name: vid
+
+   *  Identity Verification Method Reference Description: Video
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.8 of this specification
 
 7.  References
 
@@ -330,16 +407,16 @@ Table of Contents
    [I-D.skyfire-oauth-kyapay-token]
               Agarwal, A. and M. B. Jones, "KYAPay Token", Work in
               Progress, Internet-Draft, draft-skyfire-oauth-kyapay-
-              token-00, 5 July 2026,
+              token-01, 19 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-skyfire-
-              oauth-kyapay-token-00>.
+              oauth-kyapay-token-01>.
 
-   [IANA.AMR] IANA, "Authentication Method Reference Values", n.d.,
+   [IANA.AMR] IANA, "Authentication Method Reference Values",
               <https://www.iana.org/assignments/authentication-method-
               reference-values>.
 
    [IANA.JWT.Claims]
-              IANA, "JSON Web Token Claims", n.d.,
+              IANA, "JSON Web Token Claims",
               <https://www.iana.org/assignments/jwt>.
 
    [OpenID.Core]
@@ -356,6 +433,16 @@ Table of Contents
 Document History
 
    [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -02
+
+   *  Added {:vspace} syntax to definition list entries.
+
+   -01
+
+   *  Added "dbv1", "dbvm", "inp", and "vid" methods.
+
+   *  Added Nash Ali and Srinivasa Thumma as authors.
 
    -00
 
