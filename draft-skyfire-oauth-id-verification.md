@@ -135,44 +135,52 @@ are defined by this specification.
 
 ### "dbv" (Database Verification of PII) Method {#dbvMethod}
 
+{:vspace}
 dbv:
 : Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
   using an unspecified number of consumer reporting data sources
 
 ### "dbv1" (Database Verification of PII One Source) Method {#dbv1Method}
 
+{:vspace}
 dbv1:
 : Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
   using one consumer reporting data source
 
 ### "dbvm" (Database Verification of PII Multiple Sources) Method {#dbvmMethod}
 
+{:vspace}
 dbvm:
 : Database Verification of PII (match of name/address/dob/ssn/nid, etc.)
   using Multiple consumer reporting data sources
 
 ### "dig" (Digital ID Document Verification) Method {#digMethod}
 
+{:vspace}
 dig:
 : Digital ID Document Verification (for example Mobile Driver's Licenses)
 
 ### "phy" (Physical ID Document Verification) Method {#phyMethod}
 
+{:vspace}
 phy:
 : Physical ID Document Verification (for example via a real time capture of the front and back of DL or Passport photo page)
 
 ### "sec" (Secondary Document Verification) Method {#secMethod}
 
+{:vspace}
 sec:
 : Secondary Document Verification (for example via bank statements, financial statements, utility bills, government-issued papers, etc.)
 
 ### "inp" (In-person Verification) Method {#inpMethod}
 
+{:vspace}
 inp:
 : In-person Verification
 
 ### "vid" (Video Verification) Method {#vidMethod}
 
+{:vspace}
 vid:
 : Video Verification (live video interview)
 
@@ -251,6 +259,7 @@ and whether the registration description is clear.
 
 ### Registration Template
 
+{:vspace}
 Identity Verification Method Name:
 : The name requested (e.g., "dig") for the authentication method
   or family of closely related authentication methods.
@@ -266,15 +275,18 @@ Identity Verification Method Name:
   unless the Designated Experts state that there is a compelling reason
   to allow an exception.
 
+{:vspace}
 Identity Verification Method Description:
 : Brief description of the Identity Verification Method
   (e.g., "Physical ID Document verification").
 
+{:vspace}
 Change Controller:
 : For Standards Track RFCs, state "IETF". For others, give the name of the
   responsible party. Other details (e.g., postal address, email address, home page
   URI) may also be included.
 
+{:vspace}
 Specification Document(s):
 : Reference to the document or documents that specify the parameter,
   preferably including URIs that
@@ -348,6 +360,10 @@ Specification Document(s):
 {: numbered="false"}
 
 [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+-02
+
+* Added {:vspace} syntax to definition list entries.
 
 -01
 
