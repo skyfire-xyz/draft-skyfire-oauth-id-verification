@@ -74,6 +74,17 @@ informative:
     target: https://www.iana.org/assignments/authentication-method-reference-values
     title: Authentication Method Reference Values
     date: false
+  OpenID.IDA:
+    target: https://openid.net/specs/openid-ida-verified-claims-1_0.html
+    title: "OpenID Identity Assurance Schema Definition 1.0 incorporating errata set 1"
+    date: 1 July 2026
+    author:
+      - name: Torsten Lodderstedt
+      - name: Daniel Fett
+      - name: Mark Haine
+      - name: Alberto Pulido
+      - name: Kai Lehmann
+      - name: Kosuke Koiwai
 
 ...
 
@@ -88,10 +99,21 @@ This specification defines a claim and values for declaring how the person's ide
 # Introduction
 
 Knowing how a person's identity was verified can be important when making trust decisions.
-This specification defines the Identity Verification Methods (ivm) claim and values for it
+This specification defines the "ivm" (Identity Verification Methods) claim and values for it
 for declaring how the person's identity was verified.
 It also creates a registry for Identity Verification Methods Values
 and initializes the registry with the values defined in this specification.
+
+The usage of the "ivm" (Identity Verification Methods) claim parallels that of the
+"amr" (Authentication Methods References) claim and uses parallel syntax.
+Presence of a value in the claim indicates that the use of the indicated
+identity verification method succeeded.
+
+The "ivm" claim contains a set of identity verification methods thst succeeded.
+It does not provide evidence for or details of how they were used.
+Should that level of detail be desired,
+OpenID Identity Assurance Schema Definition 1.0 {{OpenID.IDA}} can be used,
+either with the "ivm" claim, or separately.
 
 While this claim and values are general purpose
 and can be used in any JSON Web Token (JWT) {{RFC7519}},
@@ -356,6 +378,15 @@ Specification Document(s):
 
 --- back
 
+
+# Acknowledgments
+{: numbered="false"}
+
+We would like to thank
+Jean Diaconu
+for his contributions to the specification.
+
+
 # Document History
 {: numbered="false"}
 
@@ -363,6 +394,8 @@ Specification Document(s):
 
 -02
 
+* Described that the "ivm" claim contains a set of identity verification methods that succeeded.
+* Described the relationship to the OpenID Identity Assurance claims.
 * Added {:vspace} syntax to definition list entries.
 
 -01
