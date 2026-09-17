@@ -318,7 +318,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.1 of this specification
+   *  Specification Document(s): Section 3.2.1 of this specification
 
 6.2.2.2.  "dbv1" Method
 
@@ -329,7 +329,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.2 of this specification
+   *  Specification Document(s): Section 3.2.2 of this specification
 
 6.2.2.3.  "dbvm" Method
 
@@ -340,7 +340,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.3 of this specification
+   *  Specification Document(s): Section 3.2.3 of this specification
 
 6.2.2.4.  "dig" Method
 
@@ -351,7 +351,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.4 of this specification
+   *  Specification Document(s): Section 3.2.4 of this specification
 
 6.2.2.5.  "phy" Method
 
@@ -362,7 +362,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.5 of this specification
+   *  Specification Document(s): Section 3.2.5 of this specification
 
 6.2.2.6.  "sec" Method
 
@@ -373,7 +373,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.6 of this specification
+   *  Specification Document(s): Section 3.2.6 of this specification
 
 6.2.2.7.  "inp" Method
 
