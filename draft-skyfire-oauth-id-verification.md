@@ -324,42 +324,42 @@ Specification Document(s):
 * Identity Verification Method Name: dbv
 * Identity Verification Method Description: Database Verification of PII
 * Change Controller: IETF
-* Reference: {{dbvMethod}} of this specification
+* Specification Document(s): {{dbvMethod}} of this specification
 
 #### "dbv1" Method
 
 * Identity Verification Method Name: dbv1
 * Identity Verification Method Description: Database Verification of PII One Source
 * Change Controller: IETF
-* Reference: {{dbv1Method}} of this specification
+* Specification Document(s): {{dbv1Method}} of this specification
 
 #### "dbvm" Method
 
 * Identity Verification Method Name: dbvm
 * Identity Verification Method Description: Database Verification of PII Multiple Sources
 * Change Controller: IETF
-* Reference: {{dbvmMethod}} of this specification
+* Specification Document(s): {{dbvmMethod}} of this specification
 
 #### "dig" Method
 
 * Identity Verification Method Name: dig
 * Identity Verification Method Description: Digital ID Document Verification
 * Change Controller: IETF
-* Reference: {{digMethod}} of this specification
+* Specification Document(s): {{digMethod}} of this specification
 
 #### "phy" Method
 
 * Identity Verification Method Name: phy
 * Identity Verification Method Description: Physical ID Document Verification
 * Change Controller: IETF
-* Reference: {{phyMethod}} of this specification
+* Specification Document(s): {{phyMethod}} of this specification
 
 #### "sec" Method
 
 * Identity Verification Method Name: sec
 * Identity Verification Method Description: Secondary Document Verification
 * Change Controller: IETF
-* Reference: {{secMethod}} of this specification
+* Specification Document(s): {{secMethod}} of this specification
 
 #### "inp" Method
 
