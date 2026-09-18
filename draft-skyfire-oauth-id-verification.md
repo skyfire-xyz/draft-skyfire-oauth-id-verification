@@ -51,6 +51,7 @@ normative:
 
 informative:
   RFC5226:
+  RFC8485:
   I-D.skyfire-oauth-kyapay-token:
   OpenID.Core:
     target: https://openid.net/specs/openid-connect-core-1_0.html
@@ -113,6 +114,8 @@ The "ivm" claim contains a set of identity verification methods thst succeeded.
 It does not provide evidence for or details of how they were used.
 Should that level of detail be desired,
 OpenID Identity Assurance Schema Definition 1.0 {{OpenID.IDA}} can be used,
+either with the "ivm" claim, or separately.
+Likewise, Vectors of Trust {{RFC8485}} can be used to provide more detail,
 either with the "ivm" claim, or separately.
 
 While this claim and values are general purpose
