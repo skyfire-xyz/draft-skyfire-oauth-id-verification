@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 21 March 2027                            Self-Issued Consulting
+Expires: 22 March 2027                            Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                       17 September 2026
+                                                       18 September 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 March 2027.
+   This Internet-Draft will expire on 22 March 2027.
 
 Copyright Notice
 
@@ -115,7 +115,9 @@ Table of Contents
    succeeded.  It does not provide evidence for or details of how they
    were used.  Should that level of detail be desired, OpenID Identity
    Assurance Schema Definition 1.0 [OpenID.IDA] can be used, either with
-   the "ivm" claim, or separately.
+   the "ivm" claim, or separately.  Likewise, Vectors of Trust [RFC8485]
+   can be used to provide more detail, either with the "ivm" claim, or
+   separately.
 
    While this claim and values are general purpose and can be used in
    any JSON Web Token (JWT) [RFC7519], one use case for them is use in
@@ -448,6 +450,10 @@ Table of Contents
               IANA Considerations Section in RFCs", RFC 5226,
               DOI 10.17487/RFC5226, May 2008,
               <https://www.rfc-editor.org/rfc/rfc5226>.
+
+   [RFC8485]  Richer, J., Ed. and L. Johansson, "Vectors of Trust",
+              RFC 8485, DOI 10.17487/RFC8485, October 2018,
+              <https://www.rfc-editor.org/rfc/rfc8485>.
 
 Acknowledgments
 

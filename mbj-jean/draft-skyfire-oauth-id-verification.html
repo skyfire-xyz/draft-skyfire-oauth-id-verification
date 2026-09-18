@@ -13,7 +13,7 @@
        Knowing how a person's identity was verified can be important when making trust decisions.
 This specification defines a claim and values for declaring how the person's identity was verified. 
     " name="description">
-<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="xml2rfc 3.34.1" name="generator">
 <meta content="agent" name="keyword">
 <meta content="identity" name="keyword">
 <meta content="agentic" name="keyword">
@@ -21,19 +21,19 @@ This specification defines a claim and values for declaring how the person's ide
 <meta content="commerce" name="keyword">
 <meta content="draft-skyfire-oauth-id-verification-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.0
+  xml2rfc 3.34.1
     Python 3.14.7
-    ConfigArgParse 1.7.5
+    ConfigArgParse 1.7.7
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.7
+    platformdirs 4.11.10
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.3
+    wcwidth 0.8.4
 -->
 <link href="draft-skyfire-oauth-id-verification.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1053,7 +1053,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Agarwal, et al.</td>
-<td class="center">Expires 21 March 2027</td>
+<td class="center">Expires 22 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <dd class="internet-draft">draft-skyfire-oauth-id-verification-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-17" class="published">17 September 2026</time>
+<time datetime="2026-09-18" class="published">18 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-21">21 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-22">22 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ This specification defines a claim and values for declaring how the person's ide
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 21 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1273,6 +1273,8 @@ identity verification method succeeded.<a href="#section-1-2" class="pilcrow">¶
 It does not provide evidence for or details of how they were used.
 Should that level of detail be desired,
 OpenID Identity Assurance Schema Definition 1.0 <span>[<a href="#OpenID.IDA" class="cite xref">OpenID.IDA</a>]</span> can be used,
+either with the "ivm" claim, or separately.
+Likewise, Vectors of Trust <span>[<a href="#RFC8485" class="cite xref">RFC8485</a>]</span> can be used to provide more detail,
 either with the "ivm" claim, or separately.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">While this claim and values are general purpose
 and can be used in any JSON Web Token (JWT) <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span>,
@@ -1822,8 +1824,12 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
 <span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Fett, D.</span>, <span class="refAuthor">Haine, M.</span>, <span class="refAuthor">Pulido, A.</span>, <span class="refAuthor">Lehmann, K.</span>, and <span class="refAuthor">K. Koiwai</span>, <span class="refTitle">"OpenID Identity Assurance Schema Definition 1.0 incorporating errata set 1"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://openid.net/specs/openid-ida-verified-claims-1_0.html">https://openid.net/specs/openid-ida-verified-claims-1_0.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC5226">[RFC5226]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Narten, T.</span> and <span class="refAuthor">H. Alvestrand</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">RFC 5226</span>, <span class="seriesInfo">DOI 10.17487/RFC5226</span>, <time datetime="2008-05" class="refDate">May 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5226">https://www.rfc-editor.org/rfc/rfc5226</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8485">[RFC8485]</dt>
+      <dd>
+<span class="refAuthor">Richer, J., Ed.</span> and <span class="refAuthor">L. Johansson</span>, <span class="refTitle">"Vectors of Trust"</span>, <span class="seriesInfo">RFC 8485</span>, <span class="seriesInfo">DOI 10.17487/RFC8485</span>, <time datetime="2018-10" class="refDate">October 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8485">https://www.rfc-editor.org/rfc/rfc8485</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
