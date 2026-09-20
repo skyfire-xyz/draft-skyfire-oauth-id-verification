@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-01T00:25:34.695806+00:00",
+  "timestamp": "2026-09-20T00:23:26.456469+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -338,6 +338,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOTI8nP88AAAABD-UCgg",
+      "title": "Address Jean Diaconu's review comments",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/8",
+      "state": "OPEN",
+      "author": "selfissued",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Cc: @jadiaconu",
+      "createdAt": "2026-09-17T18:19:06Z",
+      "updatedAt": "2026-09-18T18:41:53Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "6d0299553f1c6fd296a443e5c066506981076b9c",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "mbj-jean",
+      "headRefOid": "17abcbe68b6c53d04e57b99edfaa8288c80ee884",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
