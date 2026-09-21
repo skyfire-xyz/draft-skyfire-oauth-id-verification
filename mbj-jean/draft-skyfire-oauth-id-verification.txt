@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 22 March 2027                            Self-Issued Consulting
+Expires: 25 March 2027                            Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                       18 September 2026
+                                                       21 September 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 March 2027.
+   This Internet-Draft will expire on 25 March 2027.
 
 Copyright Notice
 
@@ -457,8 +457,8 @@ Table of Contents
 
 Acknowledgments
 
-   We would like to thank Jean Diaconu for his contributions to the
-   specification.
+   We would like to thank Jean Diaconu and Rob Zagarella for their
+   contributions to the specification.
 
 Document History
 
