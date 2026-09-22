@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-20T00:23:26.456469+00:00",
+  "timestamp": "2026-09-22T00:21:18.661721+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -128,6 +128,22 @@
           "updatedAt": "2026-07-03T20:21:06Z"
         }
       ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOTI8nP88AAAABSRxbag",
+      "title": "Describe document verification plus live facial match",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/9",
+      "state": "OPEN",
+      "author": "selfissued",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In his review comments, @Schemo512 wrote:\n\n> 2. The missing value is the most common remote flow. Document verification\n> (\"phy\" or \"dig\") plus a live facial match of the person to the document is\n> how most remote identity verification actually works, and it is exactly what\n> our enrolment does. None of the eight values names the biometric binding of\n> the live person to the document. Options: a value for it, for example \"sbm\"\n> for selfie-to-document biometric match, or a sentence stating that biometric\n> binding is signalled by co-occurrence with \"facliv\" in amr. Either works;\n> without one of them \"phy\" alone reads as document inspection with no person\n> attached.\n\nClarifying questions: By \u201clive facial match to the document\u201d, are you describing a selfie with the person\u2019s face and the document?  Or maybe a video with the person\u2019s face and the document?  I agree we want to add this and I want the description to be good.  Also, is there a document describing this procedure or procedures that we can reference in the spec?",
+      "createdAt": "2026-09-21T00:54:09Z",
+      "updatedAt": "2026-09-21T00:54:09Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -351,18 +367,26 @@
       "labels": [],
       "body": "Cc: @jadiaconu",
       "createdAt": "2026-09-17T18:19:06Z",
-      "updatedAt": "2026-09-18T18:41:53Z",
+      "updatedAt": "2026-09-21T00:47:57Z",
       "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "baseRefName": "main",
       "baseRefOid": "6d0299553f1c6fd296a443e5c066506981076b9c",
       "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "headRefName": "mbj-jean",
-      "headRefOid": "17abcbe68b6c53d04e57b99edfaa8288c80ee884",
+      "headRefOid": "c1eafc155e7c98c113aa290887d7860a5e35bbe9",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Cc: @Schemo512",
+          "createdAt": "2026-09-21T00:47:57Z",
+          "updatedAt": "2026-09-21T00:47:57Z"
+        }
+      ],
       "reviews": []
     }
   ]
