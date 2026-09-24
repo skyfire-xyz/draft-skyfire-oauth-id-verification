@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-22T00:21:18.661721+00:00",
+  "timestamp": "2026-09-24T00:20:41.697431+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -367,7 +367,7 @@
       "labels": [],
       "body": "Cc: @jadiaconu",
       "createdAt": "2026-09-17T18:19:06Z",
-      "updatedAt": "2026-09-21T00:47:57Z",
+      "updatedAt": "2026-09-22T09:58:04Z",
       "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "baseRefName": "main",
       "baseRefOid": "6d0299553f1c6fd296a443e5c066506981076b9c",
@@ -387,7 +387,34 @@
           "updatedAt": "2026-09-21T00:47:57Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABOoDGqA",
+          "commit": {
+            "abbreviatedOid": "c1eafc1"
+          },
+          "author": "jadiaconu",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-22T09:51:42Z",
+          "updatedAt": "2026-09-22T09:51:42Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABOoGvVw",
+          "commit": {
+            "abbreviatedOid": "c1eafc1"
+          },
+          "author": "jadiaconu",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-22T09:58:04Z",
+          "updatedAt": "2026-09-22T09:58:04Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
