@@ -110,7 +110,7 @@ The usage of the "ivm" (Identity Verification Methods) claim parallels that of t
 Presence of a value in the claim indicates that the use of the indicated
 identity verification method succeeded.
 
-The "ivm" claim contains a set of identity verification methods thst succeeded.
+The "ivm" claim contains a set of identity verification methods that succeeded.
 It does not provide evidence for or details of how they were used.
 Should that level of detail be desired,
 OpenID Identity Assurance Schema Definition 1.0 {{OpenID.IDA}} can be used,
