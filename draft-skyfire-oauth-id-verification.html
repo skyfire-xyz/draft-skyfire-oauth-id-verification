@@ -13,7 +13,7 @@
        Knowing how a person's identity was verified can be important when making trust decisions.
 This specification defines a claim and values for declaring how the person's identity was verified. 
     " name="description">
-<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="xml2rfc 3.34.1" name="generator">
 <meta content="agent" name="keyword">
 <meta content="identity" name="keyword">
 <meta content="agentic" name="keyword">
@@ -21,19 +21,19 @@ This specification defines a claim and values for declaring how the person's ide
 <meta content="commerce" name="keyword">
 <meta content="draft-skyfire-oauth-id-verification-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.0
+  xml2rfc 3.34.1
     Python 3.14.7
-    ConfigArgParse 1.7.5
+    ConfigArgParse 1.7.7
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.5
+    platformdirs 4.11.10
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.2
+    wcwidth 0.8.4
 -->
 <link href="draft-skyfire-oauth-id-verification.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1049,11 +1049,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Identity Verification Methods Values</td>
-<td class="right">August 2026</td>
+<td class="right">September 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Agarwal, et al.</td>
-<td class="center">Expires 4 March 2027</td>
+<td class="center">Expires 30 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <dd class="internet-draft">draft-skyfire-oauth-id-verification-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-08-31" class="published">31 August 2026</time>
+<time datetime="2026-09-26" class="published">26 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-04">4 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-30">30 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ This specification defines a claim and values for declaring how the person's ide
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 30 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1243,10 +1243,13 @@ This specification defines a claim and values for declaring how the person's ide
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-document-history" class="internal xref">Document History</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-document-history" class="internal xref">Document History</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1258,13 +1261,24 @@ This specification defines a claim and values for declaring how the person's ide
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">Knowing how a person's identity was verified can be important when making trust decisions.
-This specification defines the Identity Verification Methods (ivm) claim and values for it
+This specification defines the "ivm" (Identity Verification Methods) claim and values for it
 for declaring how the person's identity was verified.
 It also creates a registry for Identity Verification Methods Values
 and initializes the registry with the values defined in this specification.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">While this claim and values are general purpose
+<p id="section-1-2">The usage of the "ivm" (Identity Verification Methods) claim parallels that of the
+"amr" (Authentication Methods References) claim and uses parallel syntax.
+Presence of a value in the claim indicates that the use of the indicated
+identity verification method succeeded.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">The "ivm" claim contains a set of identity verification methods that succeeded.
+It does not provide evidence for or details of how they were used.
+Should that level of detail be desired,
+OpenID Identity Assurance Schema Definition 1.0 <span>[<a href="#OpenID.IDA" class="cite xref">OpenID.IDA</a>]</span> can be used,
+either with the "ivm" claim, or separately.
+Likewise, Vectors of Trust <span>[<a href="#RFC8485" class="cite xref">RFC8485</a>]</span> can be used to provide more detail,
+either with the "ivm" claim, or separately.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">While this claim and values are general purpose
 and can be used in any JSON Web Token (JWT) <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span>,
-one use case for them is use in KYAPay tokens <span>[<a href="#I-D.skyfire-oauth-kyapay-token" class="cite xref">I-D.skyfire-oauth-kyapay-token</a>]</span>.<a href="#section-1-2" class="pilcrow">¶</a></p>
+one use case for them is use in KYAPay tokens <span>[<a href="#I-D.skyfire-oauth-kyapay-token" class="cite xref">I-D.skyfire-oauth-kyapay-token</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1599,7 +1613,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.1-1.3.1">Change Controller: IETF<a href="#section-6.2.2.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.1-1.4">
-                <p id="section-6.2.2.1-1.4.1">Reference: <a href="#dbvMethod" class="auto internal xref">Section 3.2.1</a> of this specification<a href="#section-6.2.2.1-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.1-1.4.1">Specification Document(s): <a href="#dbvMethod" class="auto internal xref">Section 3.2.1</a> of this specification<a href="#section-6.2.2.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1620,7 +1634,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.2-1.3.1">Change Controller: IETF<a href="#section-6.2.2.2-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.2-1.4">
-                <p id="section-6.2.2.2-1.4.1">Reference: <a href="#dbv1Method" class="auto internal xref">Section 3.2.2</a> of this specification<a href="#section-6.2.2.2-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.2-1.4.1">Specification Document(s): <a href="#dbv1Method" class="auto internal xref">Section 3.2.2</a> of this specification<a href="#section-6.2.2.2-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1641,7 +1655,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.3-1.3.1">Change Controller: IETF<a href="#section-6.2.2.3-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.3-1.4">
-                <p id="section-6.2.2.3-1.4.1">Reference: <a href="#dbvmMethod" class="auto internal xref">Section 3.2.3</a> of this specification<a href="#section-6.2.2.3-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.3-1.4.1">Specification Document(s): <a href="#dbvmMethod" class="auto internal xref">Section 3.2.3</a> of this specification<a href="#section-6.2.2.3-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1662,7 +1676,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.4-1.3.1">Change Controller: IETF<a href="#section-6.2.2.4-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.4-1.4">
-                <p id="section-6.2.2.4-1.4.1">Reference: <a href="#digMethod" class="auto internal xref">Section 3.2.4</a> of this specification<a href="#section-6.2.2.4-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.4-1.4.1">Specification Document(s): <a href="#digMethod" class="auto internal xref">Section 3.2.4</a> of this specification<a href="#section-6.2.2.4-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1683,7 +1697,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.5-1.3.1">Change Controller: IETF<a href="#section-6.2.2.5-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.5-1.4">
-                <p id="section-6.2.2.5-1.4.1">Reference: <a href="#phyMethod" class="auto internal xref">Section 3.2.5</a> of this specification<a href="#section-6.2.2.5-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.5-1.4.1">Specification Document(s): <a href="#phyMethod" class="auto internal xref">Section 3.2.5</a> of this specification<a href="#section-6.2.2.5-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1704,7 +1718,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.6-1.3.1">Change Controller: IETF<a href="#section-6.2.2.6-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.6-1.4">
-                <p id="section-6.2.2.6-1.4.1">Reference: <a href="#secMethod" class="auto internal xref">Section 3.2.6</a> of this specification<a href="#section-6.2.2.6-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.6-1.4.1">Specification Document(s): <a href="#secMethod" class="auto internal xref">Section 3.2.6</a> of this specification<a href="#section-6.2.2.6-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1805,46 +1819,72 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
         <dd>
 <span class="refAuthor">Sakimura, N.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Jones, M. B.</span>, <span class="refAuthor">Medeiros, B. de.</span>, and <span class="refAuthor">C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 2"</span>, <time datetime="2023-12-15" class="refDate">15 December 2023</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="OpenID.IDA">[OpenID.IDA]</dt>
+        <dd>
+<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Fett, D.</span>, <span class="refAuthor">Haine, M.</span>, <span class="refAuthor">Pulido, A.</span>, <span class="refAuthor">Lehmann, K.</span>, and <span class="refAuthor">K. Koiwai</span>, <span class="refTitle">"OpenID Identity Assurance Schema Definition 1.0 incorporating errata set 1"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://openid.net/specs/openid-ida-verified-claims-1_0.html">https://openid.net/specs/openid-ida-verified-claims-1_0.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC5226">[RFC5226]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Narten, T.</span> and <span class="refAuthor">H. Alvestrand</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">RFC 5226</span>, <span class="seriesInfo">DOI 10.17487/RFC5226</span>, <time datetime="2008-05" class="refDate">May 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5226">https://www.rfc-editor.org/rfc/rfc5226</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8485">[RFC8485]</dt>
+      <dd>
+<span class="refAuthor">Richer, J., Ed.</span> and <span class="refAuthor">L. Johansson</span>, <span class="refTitle">"Vectors of Trust"</span>, <span class="seriesInfo">RFC 8485</span>, <span class="seriesInfo">DOI 10.17487/RFC8485</span>, <time datetime="2018-10" class="refDate">October 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8485">https://www.rfc-editor.org/rfc/rfc8485</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
 </section>
 </div>
-<div id="document-history">
+<div id="acknowledgments">
 <section id="appendix-A">
+      <h2 id="name-acknowledgments">
+<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-A-1">We would like to thank
+Jean Diaconu
+and
+Rob Zagarella
+for their contributions to the specification.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="document-history">
+<section id="appendix-B">
       <h2 id="name-document-history">
 <a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-A-1">[[ to be removed by the RFC Editor before publication as an RFC ]]<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">-02<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-B-1">[[ to be removed by the RFC Editor before publication as an RFC ]]<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">-02<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-3.1">
-          <p id="appendix-A-3.1.1">Added {:vspace} syntax to definition list entries.<a href="#appendix-A-3.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-3.1">
+          <p id="appendix-B-3.1.1">Described that the "ivm" claim contains a set of identity verification methods that succeeded.<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-3.2">
+          <p id="appendix-B-3.2.1">Described the relationship to the OpenID Identity Assurance claims.<a href="#appendix-B-3.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-3.3">
+          <p id="appendix-B-3.3.1">Added {:vspace} syntax to definition list entries.<a href="#appendix-B-3.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-4">-01<a href="#appendix-A-4" class="pilcrow">¶</a></p>
+<p id="appendix-B-4">-01<a href="#appendix-B-4" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-5.1">
-          <p id="appendix-A-5.1.1">Added "dbv1", "dbvm", "inp", and "vid" methods.<a href="#appendix-A-5.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-5.1">
+          <p id="appendix-B-5.1.1">Added "dbv1", "dbvm", "inp", and "vid" methods.<a href="#appendix-B-5.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-5.2">
-          <p id="appendix-A-5.2.1">Added Nash Ali and Srinivasa Thumma as authors.<a href="#appendix-A-5.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-5.2">
+          <p id="appendix-B-5.2.1">Added Nash Ali and Srinivasa Thumma as authors.<a href="#appendix-B-5.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-6">-00<a href="#appendix-A-6" class="pilcrow">¶</a></p>
+<p id="appendix-B-6">-00<a href="#appendix-B-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-7.1">
-          <p id="appendix-A-7.1.1">Initial draft.<a href="#appendix-A-7.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-7.1">
+          <p id="appendix-B-7.1.1">Initial draft.<a href="#appendix-B-7.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-B">
+<section id="appendix-C">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>

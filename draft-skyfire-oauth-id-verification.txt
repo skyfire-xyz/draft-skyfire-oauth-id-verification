@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 4 March 2027                             Self-Issued Consulting
+Expires: 30 March 2027                            Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                          31 August 2026
+                                                       26 September 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 March 2027.
+   This Internet-Draft will expire on 30 March 2027.
 
 Copyright Notice
 
@@ -93,17 +93,31 @@ Table of Contents
    7.  References
      7.1.  Normative References
      7.2.  Informative References
+   Acknowledgments
    Document History
    Authors' Addresses
 
 1.  Introduction
 
    Knowing how a person's identity was verified can be important when
-   making trust decisions.  This specification defines the Identity
-   Verification Methods (ivm) claim and values for it for declaring how
-   the person's identity was verified.  It also creates a registry for
-   Identity Verification Methods Values and initializes the registry
+   making trust decisions.  This specification defines the "ivm"
+   (Identity Verification Methods) claim and values for it for declaring
+   how the person's identity was verified.  It also creates a registry
+   for Identity Verification Methods Values and initializes the registry
    with the values defined in this specification.
+
+   The usage of the "ivm" (Identity Verification Methods) claim
+   parallels that of the "amr" (Authentication Methods References) claim
+   and uses parallel syntax.  Presence of a value in the claim indicates
+   that the use of the indicated identity verification method succeeded.
+
+   The "ivm" claim contains a set of identity verification methods that
+   succeeded.  It does not provide evidence for or details of how they
+   were used.  Should that level of detail be desired, OpenID Identity
+   Assurance Schema Definition 1.0 [OpenID.IDA] can be used, either with
+   the "ivm" claim, or separately.  Likewise, Vectors of Trust [RFC8485]
+   can be used to provide more detail, either with the "ivm" claim, or
+   separately.
 
    While this claim and values are general purpose and can be used in
    any JSON Web Token (JWT) [RFC7519], one use case for them is use in
@@ -306,7 +320,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.1 of this specification
+   *  Specification Document(s): Section 3.2.1 of this specification
 
 6.2.2.2.  "dbv1" Method
 
@@ -317,7 +331,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.2 of this specification
+   *  Specification Document(s): Section 3.2.2 of this specification
 
 6.2.2.3.  "dbvm" Method
 
@@ -328,7 +342,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.3 of this specification
+   *  Specification Document(s): Section 3.2.3 of this specification
 
 6.2.2.4.  "dig" Method
 
@@ -339,7 +353,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.4 of this specification
+   *  Specification Document(s): Section 3.2.4 of this specification
 
 6.2.2.5.  "phy" Method
 
@@ -350,7 +364,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.5 of this specification
+   *  Specification Document(s): Section 3.2.5 of this specification
 
 6.2.2.6.  "sec" Method
 
@@ -361,7 +375,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Reference: Section 3.2.6 of this specification
+   *  Specification Document(s): Section 3.2.6 of this specification
 
 6.2.2.7.  "inp" Method
 
@@ -425,16 +439,38 @@ Table of Contents
               errata set 2", 15 December 2023,
               <https://openid.net/specs/openid-connect-core-1_0.html>.
 
+   [OpenID.IDA]
+              Lodderstedt, T., Fett, D., Haine, M., Pulido, A., Lehmann,
+              K., and K. Koiwai, "OpenID Identity Assurance Schema
+              Definition 1.0 incorporating errata set 1", July 2026,
+              <https://openid.net/specs/openid-ida-verified-claims-
+              1_0.html>.
+
    [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
               IANA Considerations Section in RFCs", RFC 5226,
               DOI 10.17487/RFC5226, May 2008,
               <https://www.rfc-editor.org/rfc/rfc5226>.
+
+   [RFC8485]  Richer, J., Ed. and L. Johansson, "Vectors of Trust",
+              RFC 8485, DOI 10.17487/RFC8485, October 2018,
+              <https://www.rfc-editor.org/rfc/rfc8485>.
+
+Acknowledgments
+
+   We would like to thank Jean Diaconu and Rob Zagarella for their
+   contributions to the specification.
 
 Document History
 
    [[ to be removed by the RFC Editor before publication as an RFC ]]
 
    -02
+
+   *  Described that the "ivm" claim contains a set of identity
+      verification methods that succeeded.
+
+   *  Described the relationship to the OpenID Identity Assurance
+      claims.
 
    *  Added {:vspace} syntax to definition list entries.
 
