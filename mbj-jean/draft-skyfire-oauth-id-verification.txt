@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 25 March 2027                            Self-Issued Consulting
+Expires: 30 March 2027                            Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                       21 September 2026
+                                                       26 September 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 March 2027.
+   This Internet-Draft will expire on 30 March 2027.
 
 Copyright Notice
 
@@ -111,7 +111,7 @@ Table of Contents
    and uses parallel syntax.  Presence of a value in the claim indicates
    that the use of the indicated identity verification method succeeded.
 
-   The "ivm" claim contains a set of identity verification methods thst
+   The "ivm" claim contains a set of identity verification methods that
    succeeded.  It does not provide evidence for or details of how they
    were used.  Should that level of detail be desired, OpenID Identity
    Assurance Schema Definition 1.0 [OpenID.IDA] can be used, either with
