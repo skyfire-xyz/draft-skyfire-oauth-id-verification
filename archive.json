@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-24T00:20:41.697431+00:00",
+  "timestamp": "2026-09-27T00:24:45.381541+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -360,24 +360,26 @@
       "id": "PR_kwDOTI8nP88AAAABD-UCgg",
       "title": "Address Jean Diaconu's review comments",
       "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "selfissued",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Cc: @jadiaconu",
       "createdAt": "2026-09-17T18:19:06Z",
-      "updatedAt": "2026-09-22T09:58:04Z",
+      "updatedAt": "2026-09-26T00:17:35Z",
       "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "baseRefName": "main",
       "baseRefOid": "6d0299553f1c6fd296a443e5c066506981076b9c",
       "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
       "headRefName": "mbj-jean",
-      "headRefOid": "c1eafc155e7c98c113aa290887d7860a5e35bbe9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "77d4e2373e4946d272fc35866ac0f4a0ac883c30",
+      "closedAt": "2026-09-26T00:17:35Z",
+      "mergedAt": "2026-09-26T00:17:35Z",
+      "mergedBy": "selfissued",
+      "mergeCommit": {
+        "oid": "078cc0601701cfc14da8ae2c090af269fc3269e1"
+      },
       "comments": [
         {
           "author": "selfissued",
@@ -412,6 +414,39 @@
           "body": "",
           "createdAt": "2026-09-22T09:58:04Z",
           "updatedAt": "2026-09-22T09:58:04Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABPSxiTQ",
+          "commit": {
+            "abbreviatedOid": "c1eafc1"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-25T18:32:03Z",
+          "updatedAt": "2026-09-25T18:32:03Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "```suggestion\nThe \"ivm\" claim contains a set of identity verification methods that succeeded.\n```",
+              "createdAt": "2026-09-25T18:32:03Z",
+              "updatedAt": "2026-09-25T18:32:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABPSz7SA",
+          "commit": {
+            "abbreviatedOid": "c1eafc1"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "lgtm",
+          "createdAt": "2026-09-25T18:35:00Z",
+          "updatedAt": "2026-09-25T18:35:00Z",
           "comments": []
         }
       ]
