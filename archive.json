@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-27T00:24:45.381541+00:00",
+  "timestamp": "2026-10-04T01:03:11.697651+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -141,9 +141,17 @@
       "labels": [],
       "body": "In his review comments, @Schemo512 wrote:\n\n> 2. The missing value is the most common remote flow. Document verification\n> (\"phy\" or \"dig\") plus a live facial match of the person to the document is\n> how most remote identity verification actually works, and it is exactly what\n> our enrolment does. None of the eight values names the biometric binding of\n> the live person to the document. Options: a value for it, for example \"sbm\"\n> for selfie-to-document biometric match, or a sentence stating that biometric\n> binding is signalled by co-occurrence with \"facliv\" in amr. Either works;\n> without one of them \"phy\" alone reads as document inspection with no person\n> attached.\n\nClarifying questions: By \u201clive facial match to the document\u201d, are you describing a selfie with the person\u2019s face and the document?  Or maybe a video with the person\u2019s face and the document?  I agree we want to add this and I want the description to be good.  Also, is there a document describing this procedure or procedures that we can reference in the spec?",
       "createdAt": "2026-09-21T00:54:09Z",
-      "updatedAt": "2026-09-21T00:54:09Z",
+      "updatedAt": "2026-10-01T15:39:26Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "Schemo512",
+          "authorAssociation": "NONE",
+          "body": "Thanks Mike, and sorry for the slow reply - I was travelling. Appreciate you taking this up.\n\nIt\u2019s a short live video capture, rather than a single selfie. The person is challenged during capture, for example with a prompted gesture or spoken digits,  several facial frames are captured, and a face template derived from those frames is compared biometrically with the portrait extracted from the identity document.\n\nThe important distinction for me is between the three things involved. The document supplies the asserted identity; the live capture establishes that the person presenting is live and present; and the biometric comparison between that live capture and the document portrait establishes the binding between the person and the identity evidence. It is that last relationship that I think the additional ivm value should name.\n\nWe deliberately keep the underlying techniques out of the resulting attestation. In our VHRA, the liveness field records the count and class of verification modalities used,  ours is multi-modal and fused, the assurance level asserted against a stated framework, and the event time, but carries no biometric samples, templates, model outputs, or details of the particular liveness technique. That is broadly the same abstraction principle as amr: expose the interoperable fact a relying party needs without coupling it to the implementation.\n\nThere is useful existing terminology to reference. NIST SP 800-63A describes remote identity proofing in terms of a live capture of the applicant being physically or biometrically compared with the facial image on validated identity evidence, with liveness detection applied to the live capture. ISO/IEC 30107-3:2023 is also relevant for presentation-attack detection testing and reporting, although it deliberately does not standardize a particular PAD mechanism.\n\nOur related work is  draft-zagarella-verified-human-root , which carries the resulting assertion about a verified, live natural person without exposing biometric material.\n\nOn the signalling choice, I still favour a dedicated value rather than requiring a relying party to infer this binding from co-occurrence of phy/dig and facliv. I would probably broaden my original sbm suggestion, though: \u201cselfie-to-document\u201d is narrower than the actual semantic because the live source can be video. Something along the lines of a live biometric-to-identity-evidence match would describe the operation more accurately.\n",
+          "createdAt": "2026-10-01T15:39:26Z",
+          "updatedAt": "2026-10-01T15:39:26Z"
+        }
+      ]
     }
   ],
   "pulls": [
