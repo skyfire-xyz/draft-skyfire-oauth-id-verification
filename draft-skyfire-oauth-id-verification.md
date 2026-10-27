@@ -209,6 +209,41 @@ inp:
 vid:
 : Video Verification (live video interview)
 
+### "reg" (Business Registry Verification) Method {#regMethod}
+
+{:vspace}
+reg:
+: Business Registry Verification (match of the organization's legal name, registration number and status
+  against an official company register, for example a US Secretary of State or the UK Companies House)
+
+### "tin" (Tax Identification Number Verification) Method {#tinMethod}
+
+{:vspace}
+tin:
+: Tax Identification Number Verification (match of the organization's legal name and tax identification number
+  with the tax authority, for example via the US IRS TIN Matching program)
+
+### "bdoc" (Business Document Verification) Method {#bdocMethod}
+
+{:vspace}
+bdoc:
+: Business Document Verification (for example via a certificate of incorporation,
+  a certificate of good standing, or a shareholder register)
+
+### "ubo" (Beneficial Owner Verification) Method {#uboMethod}
+
+{:vspace}
+ubo:
+: Beneficial Owner Verification (identification of the individuals who own or control the organization,
+  and verification of each one's identity)
+
+### "rep" (Representative Verification) Method {#repMethod}
+
+{:vspace}
+rep:
+: Representative Verification (verification of the identity of the person acting for the organization,
+  and of their authority to act for it)
+
 
 # Security Considerations
 
@@ -378,6 +413,41 @@ Specification Document(s):
 * Change Controller: IETF
 * Specification Document(s): {{vidMethod}} of this specification
 
+#### "reg" Method
+
+* Identity Verification Method Name: reg
+* Identity Verification Method Description: Business Registry Verification
+* Change Controller: IETF
+* Specification Document(s): {{regMethod}} of this specification
+
+#### "tin" Method
+
+* Identity Verification Method Name: tin
+* Identity Verification Method Description: Tax Identification Number Verification
+* Change Controller: IETF
+* Specification Document(s): {{tinMethod}} of this specification
+
+#### "bdoc" Method
+
+* Identity Verification Method Name: bdoc
+* Identity Verification Method Description: Business Document Verification
+* Change Controller: IETF
+* Specification Document(s): {{bdocMethod}} of this specification
+
+#### "ubo" Method
+
+* Identity Verification Method Name: ubo
+* Identity Verification Method Description: Beneficial Owner Verification
+* Change Controller: IETF
+* Specification Document(s): {{uboMethod}} of this specification
+
+#### "rep" Method
+
+* Identity Verification Method Name: rep
+* Identity Verification Method Description: Representative Verification
+* Change Controller: IETF
+* Specification Document(s): {{repMethod}} of this specification
+
 
 --- back
 
@@ -396,6 +466,10 @@ for their contributions to the specification.
 {: numbered="false"}
 
 [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+-03
+
+* Added the "reg", "tin", "bdoc", "ubo", and "rep" methods for verifying organizations.
 
 -02
 
