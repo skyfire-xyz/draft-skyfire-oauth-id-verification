@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 30 March 2027                            Self-Issued Consulting
+Expires: 30 April 2027                            Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                       26 September 2026
+                                                         27 October 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 March 2027.
+   This Internet-Draft will expire on 30 April 2027.
 
 Copyright Notice
 
@@ -82,6 +82,11 @@ Table of Contents
        3.2.6.  "sec" (Secondary Document Verification) Method
        3.2.7.  "inp" (In-person Verification) Method
        3.2.8.  "vid" (Video Verification) Method
+       3.2.9.  "reg" (Business Registry Verification) Method
+       3.2.10. "tin" (Tax Identification Number Verification) Method
+       3.2.11. "bdoc" (Business Document Verification) Method
+       3.2.12. "ubo" (Beneficial Owner Verification) Method
+       3.2.13. "rep" (Representative Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
@@ -206,6 +211,42 @@ Table of Contents
 
    vid:
       Video Verification (live video interview)
+
+3.2.9.  "reg" (Business Registry Verification) Method
+
+   reg:
+      Business Registry Verification (match of the organization's legal
+      name, registration number and status against an official company
+      register, for example a US Secretary of State or the UK Companies
+      House)
+
+3.2.10.  "tin" (Tax Identification Number Verification) Method
+
+   tin:
+      Tax Identification Number Verification (match of the
+      organization's legal name and tax identification number with the
+      tax authority, for example via the US IRS TIN Matching program)
+
+3.2.11.  "bdoc" (Business Document Verification) Method
+
+   bdoc:
+      Business Document Verification (for example via a certificate of
+      incorporation, a certificate of good standing, or a shareholder
+      register)
+
+3.2.12.  "ubo" (Beneficial Owner Verification) Method
+
+   ubo:
+      Beneficial Owner Verification (identification of the individuals
+      who own or control the organization, and verification of each
+      one's identity)
+
+3.2.13.  "rep" (Representative Verification) Method
+
+   rep:
+      Representative Verification (verification of the identity of the
+      person acting for the organization, and of their authority to act
+      for it)
 
 4.  Security Considerations
 
@@ -399,6 +440,61 @@ Table of Contents
 
    *  Specification Document(s): Section 3.2.8 of this specification
 
+6.2.2.9.  "reg" Method
+
+   *  Identity Verification Method Name: reg
+
+   *  Identity Verification Method Description: Business Registry
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.9 of this specification
+
+6.2.2.10.  "tin" Method
+
+   *  Identity Verification Method Name: tin
+
+   *  Identity Verification Method Description: Tax Identification
+      Number Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.10 of this specification
+
+6.2.2.11.  "bdoc" Method
+
+   *  Identity Verification Method Name: bdoc
+
+   *  Identity Verification Method Description: Business Document
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.11 of this specification
+
+6.2.2.12.  "ubo" Method
+
+   *  Identity Verification Method Name: ubo
+
+   *  Identity Verification Method Description: Beneficial Owner
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.12 of this specification
+
+6.2.2.13.  "rep" Method
+
+   *  Identity Verification Method Name: rep
+
+   *  Identity Verification Method Description: Representative
+      Verification
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.2.13 of this specification
+
 7.  References
 
 7.1.  Normative References
@@ -421,9 +517,9 @@ Table of Contents
    [I-D.skyfire-oauth-kyapay-token]
               Agarwal, A. and M. B. Jones, "KYAPay Token", Work in
               Progress, Internet-Draft, draft-skyfire-oauth-kyapay-
-              token-01, 19 July 2026,
+              token-02, 1 October 2026,
               <https://datatracker.ietf.org/doc/html/draft-skyfire-
-              oauth-kyapay-token-01>.
+              oauth-kyapay-token-02>.
 
    [IANA.AMR] IANA, "Authentication Method Reference Values",
               <https://www.iana.org/assignments/authentication-method-
@@ -463,6 +559,11 @@ Acknowledgments
 Document History
 
    [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -03
+
+   *  Added the "reg", "tin", "bdoc", "ubo", and "rep" methods for
+      verifying organizations.
 
    -02
 
