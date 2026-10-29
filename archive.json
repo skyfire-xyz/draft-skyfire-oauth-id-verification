@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-04T01:03:11.697651+00:00",
+  "timestamp": "2026-10-29T00:15:57.645514+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -152,6 +152,22 @@
           "updatedAt": "2026-10-01T15:39:26Z"
         }
       ]
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOTI8nP88AAAABaZ9Bkw",
+      "title": "Add identity verification method values for organizations (KYB)",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/10",
+      "state": "OPEN",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The KYAPay token draft is adding an optional `ivm` sub-claim to the `apd` (agent platform) claim, alongside the one in `hid`. The values defined today all describe verifying a person: PII database checks, ID documents, in-person and video. An agent platform is usually an organization, and organizations are verified through Know Your Business (KYB) checks, which have no values yet.\n\nLooking at how several identity verification providers do KYB (Middesk, Persona, Trulioo, Stripe Connect and Sumsub), five checks are common. Proposed values:\n\n| Value | Description |\n|---|---|\n| `reg` | Business Registry Verification: the organization's legal name, registration number and status matched against an official company register (for example a US Secretary of State or UK Companies House) |\n| `tin` | Tax Identification Number Verification: the organization's legal name and tax identification number matched with the tax authority (for example the US IRS TIN Matching program) |\n| `bdoc` | Business Document Verification: corporate documents such as a certificate of incorporation, a certificate of good standing or a shareholder register |\n| `ubo` | Beneficial Owner Verification: the individuals who own or control the organization identified, and each one's identity verified |\n| `rep` | Representative Verification: the identity of the person acting for the organization verified, and their authority to act for it confirmed |\n\nWhen the agent platform is an individual rather than an organization, the existing values apply unchanged.\n\nSources:\n- Middesk review insights: https://docs.middesk.com/review-insights\n- Persona, verifying businesses: https://help.withpersona.com/articles/3OGe9IwySJmDvXL2DOfV7N/\n- Trulioo KYB verification: https://www.trulioo.com/solutions/business-verification/kyb-verification\n- Stripe Connect identity verification: https://docs.stripe.com/connect/identity-verification\n- Sumsub full KYB regulations: https://docs.sumsub.com/docs/full-kyb-regulations",
+      "createdAt": "2026-10-27T20:20:16Z",
+      "updatedAt": "2026-10-27T20:20:16Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -456,6 +472,126 @@
           "createdAt": "2026-09-25T18:35:00Z",
           "updatedAt": "2026-09-25T18:35:00Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOTI8nP88AAAABLH7ZHg",
+      "title": "Add identity verification methods for organizations (KYB)",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/11",
+      "state": "OPEN",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #10.\n\nAdds the `reg`, `tin`, `bdoc`, `ubo` and `rep` methods for verifying organizations, their entries in the Initial Registry Contents, and a -03 Document History entry.",
+      "createdAt": "2026-10-27T21:35:08Z",
+      "updatedAt": "2026-10-28T11:42:28Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "078cc0601701cfc14da8ae2c090af269fc3269e1",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "aa-kyb-ivm-values",
+      "headRefOid": "7b2875e64d805a3d70d5846e37d78b71766713fc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABUj1qUw",
+          "commit": {
+            "abbreviatedOid": "7b2875e"
+          },
+          "author": "copilot-pull-request-reviewer",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "<!-- ccr-overview-v2 -->\n\n### \ud83d\udfe2 Approval recommended\n\nNo active review issues remain for the organization-verification method additions and corresponding registry entries.\n\n**No open issues** \ud83c\udf89\n\n<details>\n<summary><strong>What changed in this PR</strong></summary>\n\nExtends the identity verification specification with organization-focused Know Your Business (KYB) methods, addressing issue #10 alongside the existing methods for individuals.\n\n**Changes:**\n- Defines `reg`, `tin`, `bdoc`, `ubo`, and `rep` for organization verification checks.\n- Adds matching Initial Registry Contents entries with references to each method definition.\n- Records the additions in the -03 Document History entry.\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `draft-skyfire-oauth-id-verification.md` | Adds five KYB method definitions, registry entries, and a document history entry. |\n</details>\n\n<sub>Review effort: Balanced</sub>",
+          "createdAt": "2026-10-27T21:36:27Z",
+          "updatedAt": "2026-10-27T21:36:27Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABUquEYQ",
+          "commit": {
+            "abbreviatedOid": "7b2875e"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-28T11:33:35Z",
+          "updatedAt": "2026-10-28T11:33:36Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "I suspect there's a typo here.  In my view, \"a US Secretary of State\" refers to a person appointed by the US president, as described at https://www.state.gov/secretary/.",
+              "createdAt": "2026-10-28T11:33:36Z",
+              "updatedAt": "2026-10-28T11:35:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABUqwf9w",
+          "commit": {
+            "abbreviatedOid": "7b2875e"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-28T11:37:18Z",
+          "updatedAt": "2026-10-28T11:37:18Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "Why is this named \"ubo\" rather than \"bov\"?  Is \"ubo\" a standard term for which we could provide a citation?",
+              "createdAt": "2026-10-28T11:37:18Z",
+              "updatedAt": "2026-10-28T11:37:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABUqypPA",
+          "commit": {
+            "abbreviatedOid": "7b2875e"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-28T11:40:41Z",
+          "updatedAt": "2026-10-28T11:40:41Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "```suggestion\n#### \"brv\" Method\n\n* Identity Verification Method Name: brv\n```\n\n\"reg\" sounds too generic",
+              "createdAt": "2026-10-28T11:40:41Z",
+              "updatedAt": "2026-10-28T11:40:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABUqzzJA",
+          "commit": {
+            "abbreviatedOid": "7b2875e"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-28T11:42:28Z",
+          "updatedAt": "2026-10-28T11:42:28Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\n### \"brv\" (Business Registry Verification) Method {#regMethod}\n\n{:vspace}\nbrv:\n```\n\n\"reg\" is too generic",
+              "createdAt": "2026-10-28T11:42:28Z",
+              "updatedAt": "2026-10-28T11:42:28Z"
+            }
+          ]
         }
       ]
     }
