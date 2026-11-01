@@ -209,10 +209,10 @@ inp:
 vid:
 : Video Verification (live video interview)
 
-### "reg" (Business Registry Verification) Method {#regMethod}
+### "brv" (Business Registry Verification) Method {#regMethod}
 
 {:vspace}
-reg:
+brv:
 : Business Registry Verification (match of the organization's legal name, registration number and status
   against an official company register, for example a US Secretary of State or the UK Companies House)
 
@@ -413,9 +413,9 @@ Specification Document(s):
 * Change Controller: IETF
 * Specification Document(s): {{vidMethod}} of this specification
 
-#### "reg" Method
+#### "brv" Method
 
-* Identity Verification Method Name: reg
+* Identity Verification Method Name: brv
 * Identity Verification Method Description: Business Registry Verification
 * Change Controller: IETF
 * Specification Document(s): {{regMethod}} of this specification
