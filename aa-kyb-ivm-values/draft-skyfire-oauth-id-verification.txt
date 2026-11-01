@@ -85,7 +85,7 @@ Table of Contents
        3.2.9.  "brv" (Business Registry Verification) Method
        3.2.10. "tin" (Tax Identification Number Verification) Method
        3.2.11. "bdoc" (Business Document Verification) Method
-       3.2.12. "ubo" (Beneficial Owner Verification) Method
+       3.2.12. "bov" (Beneficial Owner Verification) Method
        3.2.13. "rep" (Representative Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
@@ -217,8 +217,8 @@ Table of Contents
    brv:
       Business Registry Verification (match of the organization's legal
       name, registration number and status against an official company
-      register, for example a US Secretary of State or the UK Companies
-      House)
+      register, for example a US state's business registry, such as the
+      Delaware Division of Corporations, or Companies House in the UK)
 
 3.2.10.  "tin" (Tax Identification Number Verification) Method
 
@@ -234,12 +234,12 @@ Table of Contents
       incorporation, a certificate of good standing, or a shareholder
       register)
 
-3.2.12.  "ubo" (Beneficial Owner Verification) Method
+3.2.12.  "bov" (Beneficial Owner Verification) Method
 
-   ubo:
-      Beneficial Owner Verification (identification of the individuals
-      who own or control the organization, and verification of each
-      one's identity)
+   bov:
+      Beneficial Owner Verification (identification of the
+      organization's beneficial owners, as defined in [FATF.Glossary],
+      and verification of each one's identity)
 
 3.2.13.  "rep" (Representative Verification) Method
 
@@ -473,9 +473,9 @@ Table of Contents
 
    *  Specification Document(s): Section 3.2.11 of this specification
 
-6.2.2.12.  "ubo" Method
+6.2.2.12.  "bov" Method
 
-   *  Identity Verification Method Name: ubo
+   *  Identity Verification Method Name: bov
 
    *  Identity Verification Method Description: Beneficial Owner
       Verification
@@ -513,6 +513,10 @@ Table of Contents
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
 7.2.  Informative References
+
+   [FATF.Glossary]
+              Financial Action Task Force, "FATF Glossary",
+              <https://www.fatf-gafi.org/en/pages/fatf-glossary.html>.
 
    [I-D.skyfire-oauth-kyapay-token]
               Agarwal, A. and M. B. Jones, "KYAPay Token", Work in
@@ -562,7 +566,7 @@ Document History
 
    -03
 
-   *  Added the "reg", "tin", "bdoc", "ubo", and "rep" methods for
+   *  Added the "brv", "tin", "bdoc", "bov", and "rep" methods for
       verifying organizations.
 
    -02

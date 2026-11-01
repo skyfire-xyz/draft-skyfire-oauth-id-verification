@@ -1207,7 +1207,7 @@ This specification defines a claim and values for declaring how the person's ide
                     <p id="section-toc.1-1.3.2.2.2.11.1"><a href="#section-3.2.11" class="auto internal xref">3.2.11</a>. <a href="#name-bdoc-business-document-veri" class="internal xref">"bdoc" (Business Document Verification) Method</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.12">
-                    <p id="section-toc.1-1.3.2.2.2.12.1"><a href="#section-3.2.12" class="auto internal xref">3.2.12</a>. <a href="#name-ubo-beneficial-owner-verifi" class="internal xref">"ubo" (Beneficial Owner Verification) Method</a></p>
+                    <p id="section-toc.1-1.3.2.2.2.12.1"><a href="#section-3.2.12" class="auto internal xref">3.2.12</a>. <a href="#name-bov-beneficial-owner-verifi" class="internal xref">"bov" (Beneficial Owner Verification) Method</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.13">
                     <p id="section-toc.1-1.3.2.2.2.13.1"><a href="#section-3.2.13" class="auto internal xref">3.2.13</a>. <a href="#name-rep-representative-verifica" class="internal xref">"rep" (Representative Verification) Method</a></p>
@@ -1469,7 +1469,8 @@ using Multiple consumer reporting data sources<a href="#section-3.2.3-1.2.1" cla
             <dt id="section-3.2.9-1.1">brv:</dt>
             <dd style="margin-left: 1.5em" id="section-3.2.9-1.2">
               <p id="section-3.2.9-1.2.1">Business Registry Verification (match of the organization's legal name, registration number and status
-against an official company register, for example a US Secretary of State or the UK Companies House)<a href="#section-3.2.9-1.2.1" class="pilcrow">¶</a></p>
+against an official company register, for example a US state's business registry, such as the Delaware
+Division of Corporations, or Companies House in the UK)<a href="#section-3.2.9-1.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
@@ -1505,16 +1506,16 @@ a certificate of good standing, or a shareholder register)<a href="#section-3.2.
 </dl>
 </section>
 </div>
-<div id="uboMethod">
+<div id="bovMethod">
 <section id="section-3.2.12">
-          <h4 id="name-ubo-beneficial-owner-verifi">
-<a href="#section-3.2.12" class="section-number selfRef">3.2.12. </a><a href="#name-ubo-beneficial-owner-verifi" class="section-name selfRef">"ubo" (Beneficial Owner Verification) Method</a>
+          <h4 id="name-bov-beneficial-owner-verifi">
+<a href="#section-3.2.12" class="section-number selfRef">3.2.12. </a><a href="#name-bov-beneficial-owner-verifi" class="section-name selfRef">"bov" (Beneficial Owner Verification) Method</a>
           </h4>
 <span class="break"></span><dl class="dlNewline" id="section-3.2.12-1">
-            <dt id="section-3.2.12-1.1">ubo:</dt>
+            <dt id="section-3.2.12-1.1">bov:</dt>
             <dd style="margin-left: 1.5em" id="section-3.2.12-1.2">
-              <p id="section-3.2.12-1.2.1">Beneficial Owner Verification (identification of the individuals who own or control the organization,
-and verification of each one's identity)<a href="#section-3.2.12-1.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.2.12-1.2.1">Beneficial Owner Verification (identification of the organization's beneficial owners, as defined in
+<span>[<a href="#FATF.Glossary" class="cite xref">FATF.Glossary</a>]</span>, and verification of each one's identity)<a href="#section-3.2.12-1.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
@@ -1918,14 +1919,14 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
             </ul>
 </section>
 </div>
-<div id="ubo-method">
+<div id="bov-method">
 <section id="section-6.2.2.12">
-            <h5 id="name-ubo-method">
-<a href="#section-6.2.2.12" class="section-number selfRef">6.2.2.12. </a><a href="#name-ubo-method" class="section-name selfRef">"ubo" Method</a>
+            <h5 id="name-bov-method">
+<a href="#section-6.2.2.12" class="section-number selfRef">6.2.2.12. </a><a href="#name-bov-method" class="section-name selfRef">"bov" Method</a>
             </h5>
 <ul class="normal">
 <li class="normal" id="section-6.2.2.12-1.1">
-                <p id="section-6.2.2.12-1.1.1">Identity Verification Method Name: ubo<a href="#section-6.2.2.12-1.1.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.12-1.1.1">Identity Verification Method Name: bov<a href="#section-6.2.2.12-1.1.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.12-1.2">
                 <p id="section-6.2.2.12-1.2.1">Identity Verification Method Description: Beneficial Owner Verification<a href="#section-6.2.2.12-1.2.1" class="pilcrow">¶</a></p>
@@ -1934,7 +1935,7 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
                 <p id="section-6.2.2.12-1.3.1">Change Controller: IETF<a href="#section-6.2.2.12-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-6.2.2.12-1.4">
-                <p id="section-6.2.2.12-1.4.1">Specification Document(s): <a href="#uboMethod" class="auto internal xref">Section 3.2.12</a> of this specification<a href="#section-6.2.2.12-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-6.2.2.12-1.4.1">Specification Document(s): <a href="#bovMethod" class="auto internal xref">Section 3.2.12</a> of this specification<a href="#section-6.2.2.12-1.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </section>
@@ -1998,6 +1999,10 @@ sections may also be included but is not required.<a href="#section-6.2.1-1.8.1"
 <a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="FATF.Glossary">[FATF.Glossary]</dt>
+        <dd>
+<span class="refAuthor">Financial Action Task Force</span>, <span class="refTitle">"FATF Glossary"</span>, <span>&lt;<a href="https://www.fatf-gafi.org/en/pages/fatf-glossary.html">https://www.fatf-gafi.org/en/pages/fatf-glossary.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="I-D.skyfire-oauth-kyapay-token">[I-D.skyfire-oauth-kyapay-token]</dt>
         <dd>
 <span class="refAuthor">Agarwal, A.</span> and <span class="refAuthor">M. B. Jones</span>, <span class="refTitle">"KYAPay Token"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-skyfire-oauth-kyapay-token-02</span>, <time datetime="2026-10-01" class="refDate">1 October 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-skyfire-oauth-kyapay-token-02">https://datatracker.ietf.org/doc/html/draft-skyfire-oauth-kyapay-token-02</a>&gt;</span>. </dd>
@@ -2052,7 +2057,7 @@ for their contributions to the specification.<a href="#appendix-A-1" class="pilc
 <p id="appendix-B-2">-03<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-B-3.1">
-          <p id="appendix-B-3.1.1">Added the "reg", "tin", "bdoc", "ubo", and "rep" methods for verifying organizations.<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-3.1.1">Added the "brv", "tin", "bdoc", "bov", and "rep" methods for verifying organizations.<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="appendix-B-4">-02<a href="#appendix-B-4" class="pilcrow">¶</a></p>
