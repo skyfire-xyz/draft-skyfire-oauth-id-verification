@@ -241,8 +241,9 @@ bdoc:
 
 {:vspace}
 bov:
-: Beneficial Owner Verification (identification of the organization's beneficial owners, as defined in
-  {{FATF.Glossary}}, and verification of each one's identity)
+: Beneficial Owner Verification (identification of the natural persons who ultimately own or control the
+  organization, and verification of each one's identity; the term follows the definition of beneficial
+  owner in {{FATF.Glossary}})
 
 ### "rep" (Representative Verification) Method {#repMethod}
 
