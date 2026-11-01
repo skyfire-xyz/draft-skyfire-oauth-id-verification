@@ -52,6 +52,12 @@ normative:
 informative:
   RFC5226:
   RFC8485:
+  FATF.Glossary:
+    target: https://www.fatf-gafi.org/en/pages/fatf-glossary.html
+    title: "FATF Glossary"
+    author:
+    - org: Financial Action Task Force
+    date: false
   I-D.skyfire-oauth-kyapay-token:
   OpenID.Core:
     target: https://openid.net/specs/openid-connect-core-1_0.html
@@ -214,7 +220,8 @@ vid:
 {:vspace}
 brv:
 : Business Registry Verification (match of the organization's legal name, registration number and status
-  against an official company register, for example a US Secretary of State or the UK Companies House)
+  against an official company register, for example a US state's business registry, such as the Delaware
+  Division of Corporations, or Companies House in the UK)
 
 ### "tin" (Tax Identification Number Verification) Method {#tinMethod}
 
@@ -230,12 +237,12 @@ bdoc:
 : Business Document Verification (for example via a certificate of incorporation,
   a certificate of good standing, or a shareholder register)
 
-### "ubo" (Beneficial Owner Verification) Method {#uboMethod}
+### "bov" (Beneficial Owner Verification) Method {#bovMethod}
 
 {:vspace}
-ubo:
-: Beneficial Owner Verification (identification of the individuals who own or control the organization,
-  and verification of each one's identity)
+bov:
+: Beneficial Owner Verification (identification of the organization's beneficial owners, as defined in
+  {{FATF.Glossary}}, and verification of each one's identity)
 
 ### "rep" (Representative Verification) Method {#repMethod}
 
@@ -434,12 +441,12 @@ Specification Document(s):
 * Change Controller: IETF
 * Specification Document(s): {{bdocMethod}} of this specification
 
-#### "ubo" Method
+#### "bov" Method
 
-* Identity Verification Method Name: ubo
+* Identity Verification Method Name: bov
 * Identity Verification Method Description: Beneficial Owner Verification
 * Change Controller: IETF
-* Specification Document(s): {{uboMethod}} of this specification
+* Specification Document(s): {{bovMethod}} of this specification
 
 #### "rep" Method
 
@@ -469,7 +476,7 @@ for their contributions to the specification.
 
 -03
 
-* Added the "reg", "tin", "bdoc", "ubo", and "rep" methods for verifying organizations.
+* Added the "brv", "tin", "bdoc", "bov", and "rep" methods for verifying organizations.
 
 -02
 
