@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 30 April 2027                            Self-Issued Consulting
+Expires: 5 May 2027                               Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                         27 October 2026
+                                                         1 November 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2027.
+   This Internet-Draft will expire on 5 May 2027.
 
 Copyright Notice
 
@@ -82,7 +82,7 @@ Table of Contents
        3.2.6.  "sec" (Secondary Document Verification) Method
        3.2.7.  "inp" (In-person Verification) Method
        3.2.8.  "vid" (Video Verification) Method
-       3.2.9.  "reg" (Business Registry Verification) Method
+       3.2.9.  "brv" (Business Registry Verification) Method
        3.2.10. "tin" (Tax Identification Number Verification) Method
        3.2.11. "bdoc" (Business Document Verification) Method
        3.2.12. "ubo" (Beneficial Owner Verification) Method
@@ -212,9 +212,9 @@ Table of Contents
    vid:
       Video Verification (live video interview)
 
-3.2.9.  "reg" (Business Registry Verification) Method
+3.2.9.  "brv" (Business Registry Verification) Method
 
-   reg:
+   brv:
       Business Registry Verification (match of the organization's legal
       name, registration number and status against an official company
       register, for example a US Secretary of State or the UK Companies
@@ -440,9 +440,9 @@ Table of Contents
 
    *  Specification Document(s): Section 3.2.8 of this specification
 
-6.2.2.9.  "reg" Method
+6.2.2.9.  "brv" Method
 
-   *  Identity Verification Method Name: reg
+   *  Identity Verification Method Name: brv
 
    *  Identity Verification Method Description: Business Registry
       Verification
