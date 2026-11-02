@@ -52,6 +52,12 @@ normative:
 informative:
   RFC5226:
   RFC8485:
+  FATF.Glossary:
+    target: https://www.fatf-gafi.org/en/pages/fatf-glossary.html
+    title: "FATF Glossary"
+    author:
+    - org: Financial Action Task Force
+    date: false
   I-D.skyfire-oauth-kyapay-token:
   OpenID.Core:
     target: https://openid.net/specs/openid-connect-core-1_0.html
@@ -208,6 +214,43 @@ inp:
 {:vspace}
 vid:
 : Video Verification (live video interview)
+
+### "brv" (Business Registry Verification) Method {#regMethod}
+
+{:vspace}
+brv:
+: Business Registry Verification (match of the organization's legal name, registration number and status
+  against an official company register, for example a US state's business registry, such as the Delaware
+  Division of Corporations, or Companies House in the UK)
+
+### "tin" (Tax Identification Number Verification) Method {#tinMethod}
+
+{:vspace}
+tin:
+: Tax Identification Number Verification (match of the organization's legal name and tax identification number
+  with the tax authority, for example via the US IRS TIN Matching program)
+
+### "bdoc" (Business Document Verification) Method {#bdocMethod}
+
+{:vspace}
+bdoc:
+: Business Document Verification (for example via a certificate of incorporation,
+  a certificate of good standing, or a shareholder register)
+
+### "bov" (Beneficial Owner Verification) Method {#bovMethod}
+
+{:vspace}
+bov:
+: Beneficial Owner Verification (identification of the natural persons who ultimately own or control the
+  organization, and verification of each one's identity; the term follows the definition of beneficial
+  owner in {{FATF.Glossary}})
+
+### "rep" (Representative Verification) Method {#repMethod}
+
+{:vspace}
+rep:
+: Representative Verification (verification of the identity of the person acting for the organization,
+  and of their authority to act for it)
 
 
 # Security Considerations
@@ -378,6 +421,41 @@ Specification Document(s):
 * Change Controller: IETF
 * Specification Document(s): {{vidMethod}} of this specification
 
+#### "brv" Method
+
+* Identity Verification Method Name: brv
+* Identity Verification Method Description: Business Registry Verification
+* Change Controller: IETF
+* Specification Document(s): {{regMethod}} of this specification
+
+#### "tin" Method
+
+* Identity Verification Method Name: tin
+* Identity Verification Method Description: Tax Identification Number Verification
+* Change Controller: IETF
+* Specification Document(s): {{tinMethod}} of this specification
+
+#### "bdoc" Method
+
+* Identity Verification Method Name: bdoc
+* Identity Verification Method Description: Business Document Verification
+* Change Controller: IETF
+* Specification Document(s): {{bdocMethod}} of this specification
+
+#### "bov" Method
+
+* Identity Verification Method Name: bov
+* Identity Verification Method Description: Beneficial Owner Verification
+* Change Controller: IETF
+* Specification Document(s): {{bovMethod}} of this specification
+
+#### "rep" Method
+
+* Identity Verification Method Name: rep
+* Identity Verification Method Description: Representative Verification
+* Change Controller: IETF
+* Specification Document(s): {{repMethod}} of this specification
+
 
 --- back
 
@@ -396,6 +474,10 @@ for their contributions to the specification.
 {: numbered="false"}
 
 [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+-03
+
+* Added the "brv", "tin", "bdoc", "bov", and "rep" methods for verifying organizations.
 
 -02
 
