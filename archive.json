@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-05T00:13:16.897872+00:00",
+  "timestamp": "2026-11-08T00:15:15.019708+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -167,6 +167,22 @@
       "createdAt": "2026-10-27T20:20:16Z",
       "updatedAt": "2026-11-02T05:34:50Z",
       "closedAt": "2026-11-02T05:34:50Z",
+      "comments": []
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOTI8nP88AAAABc4XM9A",
+      "title": "Add a verification time claim (\"idv_time\")",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/12",
+      "state": "OPEN",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "From Rob Zagarella's (@Schemo512) implementer review (item 4, 16 Sep):\nhttps://mailarchive.ietf.org/arch/msg/oauth/Px1NpSn3OV3Dr6sJAiUM_Ar1rOs\n\n\"amr\" has \"auth_time\", but \"ivm\" has nothing equivalent, and identity verification is often months or years older than the token. For agentic payments, the age of the verification is part of the trust decision.\n\nMike proposed an \"idv_time\" claim (21 Sep) and asked whether it should carry the time of the oldest or the newest verification step:\nhttps://mailarchive.ietf.org/arch/msg/oauth/TUy8Pd7vMorJdzzU9Q9DWknqnKQ\n\nRob's answer (1 Oct):\nhttps://mailarchive.ietf.org/arch/msg/oauth/eXDS11eJuwTHA8gaLWr-1q-QWKQ\n\n- One \"idv_time\": the time the current verification result was established, that is, when all required steps had completed and the issuer could first assert the result. Often the last required step, but defined by the result rather than by the oldest or newest step.\n- Where a relying party needs the age of each step (for example, a document checked two years ago and a biometric binding refreshed yesterday), the individual evidence records carry their own times.\n\nRob offered to draft text.\n",
+      "createdAt": "2026-11-05T22:53:41Z",
+      "updatedAt": "2026-11-05T22:53:41Z",
+      "closedAt": null,
       "comments": []
     }
   ],
