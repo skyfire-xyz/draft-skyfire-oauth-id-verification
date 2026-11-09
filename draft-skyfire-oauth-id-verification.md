@@ -108,6 +108,8 @@ This specification defines a claim and values for declaring how the person's ide
 Knowing how a person's identity was verified can be important when making trust decisions.
 This specification defines the "ivm" (Identity Verification Methods) claim and values for it
 for declaring how the person's identity was verified.
+The "idv_time" (Identity Verification Time) claim conveys when that verification
+result was established.
 It also creates a registry for Identity Verification Methods Values
 and initializes the registry with the values defined in this specification.
 
@@ -158,6 +160,20 @@ IANA "Identity Verification Methods" registry
 established by {{ivmRegistry}};
 parties using this claim will need to agree upon the meanings of
 any unregistered values used, which may be context specific.
+
+## "idv_time" (Identity Verification Time) Claim {#idvTimeClaim}
+
+The "idv_time" (Identity Verification Time) claim is OPTIONAL.
+It is the time at which the identity verification result
+described by the accompanying "ivm" claim was established.
+Its value is a NumericDate {{RFC7519}},
+as for the "auth_time" claim {{OpenID.Core}}.
+This is the time when the issuer had completed all steps
+required to assert that result.
+It is not necessarily the earliest or latest individual evidence-collection event.
+The times of individual verification steps are kept
+in the verifier's record of the verification,
+rather than inferred from "idv_time".
 
 ## Identity Verification Method Values {#ivmValues}
 
@@ -281,6 +297,13 @@ established by {{RFC7519}}.
 * Claim Description: Identity Verification Methods
 * Change Controller: Michael B. Jones - michael_b_jones@hotmail.com
 * Reference: {{ivmClaim}} of this specification
+
+### "idv_time" Claim
+
+* Claim Name: idv_time
+* Claim Description: Identity Verification Time
+* Change Controller: Michael B. Jones - michael_b_jones@hotmail.com
+* Reference: {{idvTimeClaim}} of this specification
 
 ## Identity Verification Methods Registry {#ivmRegistry}
 
@@ -474,6 +497,10 @@ for their contributions to the specification.
 {: numbered="false"}
 
 [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+-04
+
+* Added the "idv_time" (Identity Verification Time) claim.
 
 -03
 
