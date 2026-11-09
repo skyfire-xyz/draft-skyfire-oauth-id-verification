@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 6 May 2027                               Self-Issued Consulting
+Expires: 13 May 2027                              Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                         2 November 2026
+                                                         9 November 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 May 2027.
+   This Internet-Draft will expire on 13 May 2027.
 
 Copyright Notice
 
@@ -72,26 +72,28 @@ Table of Contents
    2.  Conventions and Definitions
    3.  Identity Verification Methods
      3.1.  "ivm" (Identity Verification Methods) Claim
-     3.2.  Identity Verification Method Values
-       3.2.1.  "dbv" (Database Verification of PII) Method
-       3.2.2.  "dbv1" (Database Verification of PII One Source) Method
-       3.2.3.  "dbvm" (Database Verification of PII Multiple Sources)
+     3.2.  "idv_time" (Identity Verification Time) Claim
+     3.3.  Identity Verification Method Values
+       3.3.1.  "dbv" (Database Verification of PII) Method
+       3.3.2.  "dbv1" (Database Verification of PII One Source) Method
+       3.3.3.  "dbvm" (Database Verification of PII Multiple Sources)
                Method
-       3.2.4.  "dig" (Digital ID Document Verification) Method
-       3.2.5.  "phy" (Physical ID Document Verification) Method
-       3.2.6.  "sec" (Secondary Document Verification) Method
-       3.2.7.  "inp" (In-person Verification) Method
-       3.2.8.  "vid" (Video Verification) Method
-       3.2.9.  "brv" (Business Registry Verification) Method
-       3.2.10. "tin" (Tax Identification Number Verification) Method
-       3.2.11. "bdoc" (Business Document Verification) Method
-       3.2.12. "bov" (Beneficial Owner Verification) Method
-       3.2.13. "rep" (Representative Verification) Method
+       3.3.4.  "dig" (Digital ID Document Verification) Method
+       3.3.5.  "phy" (Physical ID Document Verification) Method
+       3.3.6.  "sec" (Secondary Document Verification) Method
+       3.3.7.  "inp" (In-person Verification) Method
+       3.3.8.  "vid" (Video Verification) Method
+       3.3.9.  "brv" (Business Registry Verification) Method
+       3.3.10. "tin" (Tax Identification Number Verification) Method
+       3.3.11. "bdoc" (Business Document Verification) Method
+       3.3.12. "bov" (Beneficial Owner Verification) Method
+       3.3.13. "rep" (Representative Verification) Method
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
      6.1.  JSON Web Token Claims Registration
        6.1.1.  "ivm" Claim
+       6.1.2.  "idv_time" Claim
      6.2.  Identity Verification Methods Registry
        6.2.1.  Registration Template
        6.2.2.  Initial Registry Contents
@@ -107,9 +109,11 @@ Table of Contents
    Knowing how a person's identity was verified can be important when
    making trust decisions.  This specification defines the "ivm"
    (Identity Verification Methods) claim and values for it for declaring
-   how the person's identity was verified.  It also creates a registry
-   for Identity Verification Methods Values and initializes the registry
-   with the values defined in this specification.
+   how the person's identity was verified.  The "idv_time" (Identity
+   Verification Time) claim conveys when that verification result was
+   established.  It also creates a registry for Identity Verification
+   Methods Values and initializes the registry with the values defined
+   in this specification.
 
    The usage of the "ivm" (Identity Verification Methods) claim
    parallels that of the "amr" (Authentication Methods References) claim
@@ -159,60 +163,72 @@ Table of Contents
    meanings of any unregistered values used, which may be context
    specific.
 
-3.2.  Identity Verification Method Values
+3.2.  "idv_time" (Identity Verification Time) Claim
+
+   The "idv_time" (Identity Verification Time) claim is OPTIONAL.  It is
+   the time at which the identity verification result described by the
+   accompanying "ivm" claim was established.  Its value is a NumericDate
+   [RFC7519], as for the "auth_time" claim [OpenID.Core].  This is the
+   time when the issuer had completed all steps required to assert that
+   result.  It is not necessarily the earliest or latest individual
+   evidence-collection event.  The times of individual verification
+   steps are kept in the verifier's record of the verification, rather
+   than inferred from "idv_time".
+
+3.3.  Identity Verification Method Values
 
    The following Identity Verification Method values are defined by this
    specification.
 
-3.2.1.  "dbv" (Database Verification of PII) Method
+3.3.1.  "dbv" (Database Verification of PII) Method
 
    dbv:
       Database Verification of PII (match of name/address/dob/ssn/nid,
       etc.) using an unspecified number of consumer reporting data
       sources
 
-3.2.2.  "dbv1" (Database Verification of PII One Source) Method
+3.3.2.  "dbv1" (Database Verification of PII One Source) Method
 
    dbv1:
       Database Verification of PII (match of name/address/dob/ssn/nid,
       etc.) using one consumer reporting data source
 
-3.2.3.  "dbvm" (Database Verification of PII Multiple Sources) Method
+3.3.3.  "dbvm" (Database Verification of PII Multiple Sources) Method
 
    dbvm:
       Database Verification of PII (match of name/address/dob/ssn/nid,
       etc.) using Multiple consumer reporting data sources
 
-3.2.4.  "dig" (Digital ID Document Verification) Method
+3.3.4.  "dig" (Digital ID Document Verification) Method
 
    dig:
       Digital ID Document Verification (for example Mobile Driver's
       Licenses)
 
-3.2.5.  "phy" (Physical ID Document Verification) Method
+3.3.5.  "phy" (Physical ID Document Verification) Method
 
    phy:
       Physical ID Document Verification (for example via a real time
       capture of the front and back of DL or Passport photo page)
 
-3.2.6.  "sec" (Secondary Document Verification) Method
+3.3.6.  "sec" (Secondary Document Verification) Method
 
    sec:
       Secondary Document Verification (for example via bank statements,
       financial statements, utility bills, government-issued papers,
       etc.)
 
-3.2.7.  "inp" (In-person Verification) Method
+3.3.7.  "inp" (In-person Verification) Method
 
    inp:
       In-person Verification
 
-3.2.8.  "vid" (Video Verification) Method
+3.3.8.  "vid" (Video Verification) Method
 
    vid:
       Video Verification (live video interview)
 
-3.2.9.  "brv" (Business Registry Verification) Method
+3.3.9.  "brv" (Business Registry Verification) Method
 
    brv:
       Business Registry Verification (match of the organization's legal
@@ -220,21 +236,21 @@ Table of Contents
       register, for example a US state's business registry, such as the
       Delaware Division of Corporations, or Companies House in the UK)
 
-3.2.10.  "tin" (Tax Identification Number Verification) Method
+3.3.10.  "tin" (Tax Identification Number Verification) Method
 
    tin:
       Tax Identification Number Verification (match of the
       organization's legal name and tax identification number with the
       tax authority, for example via the US IRS TIN Matching program)
 
-3.2.11.  "bdoc" (Business Document Verification) Method
+3.3.11.  "bdoc" (Business Document Verification) Method
 
    bdoc:
       Business Document Verification (for example via a certificate of
       incorporation, a certificate of good standing, or a shareholder
       register)
 
-3.2.12.  "bov" (Beneficial Owner Verification) Method
+3.3.12.  "bov" (Beneficial Owner Verification) Method
 
    bov:
       Beneficial Owner Verification (identification of the natural
@@ -242,7 +258,7 @@ Table of Contents
       verification of each one's identity; the term follows the
       definition of beneficial owner in [FATF.Glossary])
 
-3.2.13.  "rep" (Representative Verification) Method
+3.3.13.  "rep" (Representative Verification) Method
 
    rep:
       Representative Verification (verification of the identity of the
@@ -276,13 +292,23 @@ Table of Contents
 
    *  Reference: Section 3.1 of this specification
 
+6.1.2.  "idv_time" Claim
+
+   *  Claim Name: idv_time
+
+   *  Claim Description: Identity Verification Time
+
+   *  Change Controller: Michael B.  Jones - michael_b_jones@hotmail.com
+
+   *  Reference: Section 3.2 of this specification
+
 6.2.  Identity Verification Methods Registry
 
    This specification establishes the IANA "Identity Verification
    Methods" registry for ivm claim array element values.  The registry
    records the Identity Verification Method value and a reference to the
    specification that defines it.  This specification registers the
-   Identity Verification Method values defined in Section 3.2.
+   Identity Verification Method values defined in Section 3.3.
 
    Values are registered on an Expert Review [RFC5226] basis after a
    three-week review period on the <jwt-reg-review@ietf.org> mailing
@@ -362,7 +388,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.1 of this specification
+   *  Specification Document(s): Section 3.3.1 of this specification
 
 6.2.2.2.  "dbv1" Method
 
@@ -373,7 +399,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.2 of this specification
+   *  Specification Document(s): Section 3.3.2 of this specification
 
 6.2.2.3.  "dbvm" Method
 
@@ -384,7 +410,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.3 of this specification
+   *  Specification Document(s): Section 3.3.3 of this specification
 
 6.2.2.4.  "dig" Method
 
@@ -395,7 +421,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.4 of this specification
+   *  Specification Document(s): Section 3.3.4 of this specification
 
 6.2.2.5.  "phy" Method
 
@@ -406,7 +432,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.5 of this specification
+   *  Specification Document(s): Section 3.3.5 of this specification
 
 6.2.2.6.  "sec" Method
 
@@ -417,7 +443,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.6 of this specification
+   *  Specification Document(s): Section 3.3.6 of this specification
 
 6.2.2.7.  "inp" Method
 
@@ -428,7 +454,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.7 of this specification
+   *  Specification Document(s): Section 3.3.7 of this specification
 
 6.2.2.8.  "vid" Method
 
@@ -439,7 +465,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.8 of this specification
+   *  Specification Document(s): Section 3.3.8 of this specification
 
 6.2.2.9.  "brv" Method
 
@@ -450,7 +476,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.9 of this specification
+   *  Specification Document(s): Section 3.3.9 of this specification
 
 6.2.2.10.  "tin" Method
 
@@ -461,7 +487,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.10 of this specification
+   *  Specification Document(s): Section 3.3.10 of this specification
 
 6.2.2.11.  "bdoc" Method
 
@@ -472,7 +498,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.11 of this specification
+   *  Specification Document(s): Section 3.3.11 of this specification
 
 6.2.2.12.  "bov" Method
 
@@ -483,7 +509,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.12 of this specification
+   *  Specification Document(s): Section 3.3.12 of this specification
 
 6.2.2.13.  "rep" Method
 
@@ -494,7 +520,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.2.13 of this specification
+   *  Specification Document(s): Section 3.3.13 of this specification
 
 7.  References
 
@@ -522,9 +548,9 @@ Table of Contents
    [I-D.skyfire-oauth-kyapay-token]
               Agarwal, A. and M. B. Jones, "KYAPay Token", Work in
               Progress, Internet-Draft, draft-skyfire-oauth-kyapay-
-              token-02, 1 October 2026,
+              token-03, 2 November 2026,
               <https://datatracker.ietf.org/doc/html/draft-skyfire-
-              oauth-kyapay-token-02>.
+              oauth-kyapay-token-03>.
 
    [IANA.AMR] IANA, "Authentication Method Reference Values",
               <https://www.iana.org/assignments/authentication-method-
@@ -564,6 +590,10 @@ Acknowledgments
 Document History
 
    [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -04
+
+   *  Added the "idv_time" (Identity Verification Time) claim.
 
    -03
 
