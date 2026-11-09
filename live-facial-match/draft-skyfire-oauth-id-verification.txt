@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 12 May 2027                              Self-Issued Consulting
+Expires: 13 May 2027                              Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                         8 November 2026
+                                                         9 November 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 May 2027.
+   This Internet-Draft will expire on 13 May 2027.
 
 Copyright Notice
 
@@ -222,10 +222,10 @@ Table of Contents
       portrait on the identity evidence, such as the photo in an
       identity document, with presentation attack detection [ISO30107-1]
       applied to the live capture; see the Identity Verification Methods
-      section of [NIST.SP.800-63A-4]).  This value names the binding of
-      the person presenting to the identity evidence, and is typically
-      used together with a value for the verification of that evidence,
-      such as "phy" or "dig".
+      section of [NIST.SP.800-63A-4]).  This value indicates that the
+      person presenting was matched to the identity evidence.  It is
+      typically used together with a value for the verification of that
+      evidence itself, such as "phy" or "dig".
 
 3.2.10.  "brv" (Business Registry Verification) Method
 
