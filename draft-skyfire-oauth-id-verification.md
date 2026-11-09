@@ -240,9 +240,9 @@ lfm:
   evidence, such as the photo in an identity document, with presentation attack
   detection {{ISO30107-1}} applied to the live capture; see the Identity
   Verification Methods section of {{NIST.SP.800-63A-4}}).
-  This value names the binding of the person presenting to the identity
-  evidence, and is typically used together with a value for the verification
-  of that evidence, such as "phy" or "dig".
+  This value indicates that the person presenting was matched to the identity
+  evidence. It is typically used together with a value for the verification
+  of that evidence itself, such as "phy" or "dig".
 
 ### "brv" (Business Registry Verification) Method {#regMethod}
 
