@@ -51,6 +51,22 @@ normative:
 
 informative:
   RFC5226:
+  ISO30107-1:
+    target: https://www.iso.org/standard/83828.html
+    title: "Information technology - Biometric presentation attack detection - Part 1: Framework"
+    author:
+      - org: International Organization for Standardization
+    date: 2023
+    seriesinfo:
+      "ISO/IEC": "30107-1:2023"
+  NIST.SP.800-63A-4:
+    target: https://pages.nist.gov/800-63-4/sp800-63a.html
+    title: "Digital Identity Guidelines: Identity Proofing and Enrollment"
+    author:
+      - org: National Institute of Standards and Technology
+    date: 2025-08
+    seriesinfo:
+      "NIST Special Publication": "800-63A-4"
   RFC8485:
   FATF.Glossary:
     target: https://www.fatf-gafi.org/en/pages/fatf-glossary.html
@@ -215,6 +231,19 @@ inp:
 vid:
 : Video Verification (live video interview)
 
+### "lfm" (Live Facial Match to Identity Evidence) Method {#lfmMethod}
+
+{:vspace}
+lfm:
+: Live Facial Match to Identity Evidence (automated comparison of the person's
+  face, captured live as an image or video, against the portrait on the identity
+  evidence, such as the photo in an identity document, with presentation attack
+  detection {{ISO30107-1}} applied to the live capture; see the Identity
+  Verification Methods section of {{NIST.SP.800-63A-4}}).
+  This value indicates that the person presenting was matched to the identity
+  evidence. It is typically used together with a value for the verification
+  of that evidence itself, such as "phy" or "dig".
+
 ### "brv" (Business Registry Verification) Method {#regMethod}
 
 {:vspace}
@@ -251,6 +280,23 @@ bov:
 rep:
 : Representative Verification (verification of the identity of the person acting for the organization,
   and of their authority to act for it)
+
+## Example {#example}
+
+The following is an example JWT Claims Set
+for a person whose physical identity document was verified
+and whose face, captured live, was matched to the portrait on that document:
+
+~~~ json
+{
+  "iss": "https://server.example.com",
+  "sub": "248289761001",
+  "ivm": ["phy", "lfm"]
+}
+~~~
+
+Without "lfm", the "ivm" claim would say only that the document was verified,
+not that the person presenting it is the person it identifies.
 
 
 # Security Considerations
@@ -421,6 +467,13 @@ Specification Document(s):
 * Change Controller: IETF
 * Specification Document(s): {{vidMethod}} of this specification
 
+#### "lfm" Method
+
+* Identity Verification Method Name: lfm
+* Identity Verification Method Description: Live Facial Match to Identity Evidence
+* Change Controller: IETF
+* Specification Document(s): {{lfmMethod}} of this specification
+
 #### "brv" Method
 
 * Identity Verification Method Name: brv
@@ -474,6 +527,10 @@ for their contributions to the specification.
 {: numbered="false"}
 
 [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+-04
+
+* Added the "lfm" (Live Facial Match to Identity Evidence) method and an example of its use.
 
 -03
 
