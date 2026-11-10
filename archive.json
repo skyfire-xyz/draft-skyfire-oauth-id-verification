@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-08T00:15:15.019708+00:00",
+  "timestamp": "2026-11-10T00:12:39.945377+00:00",
   "repo": "skyfire-xyz/draft-skyfire-oauth-id-verification",
   "labels": [
     {
@@ -174,15 +174,15 @@
       "id": "I_kwDOTI8nP88AAAABc4XM9A",
       "title": "Add a verification time claim (\"idv_time\")",
       "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/issues/12",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "skyfire-ankit",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "From Rob Zagarella's (@Schemo512) implementer review (item 4, 16 Sep):\nhttps://mailarchive.ietf.org/arch/msg/oauth/Px1NpSn3OV3Dr6sJAiUM_Ar1rOs\n\n\"amr\" has \"auth_time\", but \"ivm\" has nothing equivalent, and identity verification is often months or years older than the token. For agentic payments, the age of the verification is part of the trust decision.\n\nMike proposed an \"idv_time\" claim (21 Sep) and asked whether it should carry the time of the oldest or the newest verification step:\nhttps://mailarchive.ietf.org/arch/msg/oauth/TUy8Pd7vMorJdzzU9Q9DWknqnKQ\n\nRob's answer (1 Oct):\nhttps://mailarchive.ietf.org/arch/msg/oauth/eXDS11eJuwTHA8gaLWr-1q-QWKQ\n\n- One \"idv_time\": the time the current verification result was established, that is, when all required steps had completed and the issuer could first assert the result. Often the last required step, but defined by the result rather than by the oldest or newest step.\n- Where a relying party needs the age of each step (for example, a document checked two years ago and a biometric binding refreshed yesterday), the individual evidence records carry their own times.\n\nRob offered to draft text.\n",
       "createdAt": "2026-11-05T22:53:41Z",
-      "updatedAt": "2026-11-05T22:53:41Z",
-      "closedAt": null,
+      "updatedAt": "2026-11-09T04:26:45Z",
+      "closedAt": "2026-11-09T04:26:45Z",
       "comments": []
     }
   ],
@@ -795,6 +795,167 @@
           "body": "",
           "createdAt": "2026-11-02T05:26:53Z",
           "updatedAt": "2026-11-02T05:26:53Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOTI8nP88AAAABNnX9fg",
+      "title": "Add the \"idv_time\" (Identity Verification Time) claim",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/13",
+      "state": "MERGED",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #12.\r\n\r\nAdds the \"idv_time\" claim: when the identity verification result described by the accompanying \"ivm\" claim was established, as a NumericDate, like \"auth_time\". Based on Rob Zagarella's proposed text, with three changes: the result is the one described by the accompanying \"ivm\" claim; the times of individual steps are kept in the verifier's record of the verification; and the claim is registered in the JSON Web Token Claims registry. Adds a -04 Document History entry.\r\n\r\n@Schemo512, as promised, here it is for your review.",
+      "createdAt": "2026-11-08T04:36:31Z",
+      "updatedAt": "2026-11-09T04:26:46Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "23ba89501ce1159a10b495175b59476f2f57ba09",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "idv-time",
+      "headRefOid": "ed4292745fab08e66192338f17a0cabfb3665fe3",
+      "closedAt": "2026-11-09T04:26:44Z",
+      "mergedAt": "2026-11-09T04:26:43Z",
+      "mergedBy": "skyfire-ankit",
+      "mergeCommit": {
+        "oid": "b12f532a5a5345d8e33ad32c7770c3c479115489"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWrKzSg",
+          "commit": {
+            "abbreviatedOid": "ed42927"
+          },
+          "author": "copilot-pull-request-reviewer",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "<!-- ccr-overview-v2 -->\n\n### \ud83d\udfe2 Approval recommended\n\nThe optional `idv_time` claim addition has no active review issues.\n\n**No open issues** \ud83c\udf89\n\n<details>\n<summary><strong>What changed in this PR</strong></summary>\n\nAdds the optional `idv_time` claim to the identity verification specification, addressing #12 by allowing relying parties to assess the age of the verification result described by `ivm`.\n\n**Changes:**\n- Defines `idv_time` as a NumericDate marking when all steps required to assert the verification result were complete.\n- Clarifies that individual verification-step times remain in the verifier\u2019s records.\n- Adds the JWT claim registration and a `-04` Document History entry.\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `draft-skyfire-oauth-id-verification.md` | Defines and registers `idv_time`, updates the introduction, and records the addition in Document History. |\n</details>\n\n<sub>Review effort: Balanced</sub>",
+          "createdAt": "2026-11-08T04:38:26Z",
+          "updatedAt": "2026-11-08T04:38:26Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWt6o2g",
+          "commit": {
+            "abbreviatedOid": "ed42927"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-08T20:21:02Z",
+          "updatedAt": "2026-11-08T20:21:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOTI8nP88AAAABNniazA",
+      "title": "Add the \"lfm\" (Live Facial Match to Identity Evidence) method",
+      "url": "https://github.com/skyfire-xyz/draft-skyfire-oauth-id-verification/pull/14",
+      "state": "OPEN",
+      "author": "skyfire-ankit",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #9.\r\n\r\nAdds the \"lfm\" method: an automated comparison of the person's face, captured live as an image or video with presentation attack detection, against the portrait on the identity evidence, such as the photo in an identity document. It indicates that the person was matched to the evidence and is used with \"phy\" or \"dig\". It is a separate value because \"facliv\" in the AMR values is a liveness determination, not a comparison. Faces only; other biometrics can get their own values. References NIST SP 800-63A-4 and ISO/IEC 30107-1. Adds an example of its use and a -04 Document History entry.\r\n\r\n@Schemo512, from your answer on #9; your review is welcome.",
+      "createdAt": "2026-11-08T05:08:49Z",
+      "updatedAt": "2026-11-09T17:52:56Z",
+      "baseRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "baseRefName": "main",
+      "baseRefOid": "23ba89501ce1159a10b495175b59476f2f57ba09",
+      "headRepository": "skyfire-xyz/draft-skyfire-oauth-id-verification",
+      "headRefName": "live-facial-match",
+      "headRefOid": "1b63e6671196b82e0435fda98f46ffdde5083b11",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWrQfWQ",
+          "commit": {
+            "abbreviatedOid": "7218123"
+          },
+          "author": "copilot-pull-request-reviewer",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "<!-- ccr-overview-v2 -->\n\n### \ud83d\udfe2 Approval recommended\n\nNo active review issues are reported for the addition of the `lfm` identity verification method.\n\n**No open issues** \ud83c\udf89\n\n<details>\n<summary><strong>What changed in this PR</strong></summary>\n\nAddresses #9 by adding `lfm` (Live Facial Match to Identity Evidence) to the identity verification methods, distinguishing live facial matching from document verification alone.\n\n**Changes:**\n- Defines `lfm` as an automated facial comparison with presentation attack detection, with ISO and NIST references.\n- Adds a JWT example combining `phy` and `lfm`.\n- Adds the method\u2019s registry entry and a -04 Document History entry.\n\n| File | Description |\r\n| ---- | ----------- |\r\n| draft-skyfire-oauth-id-verification.md | Defines and registers `lfm`, adds supporting references and an example, and updates document history. |\n</details>\n\n<sub>Review effort: Balanced</sub>",
+          "createdAt": "2026-11-08T05:11:03Z",
+          "updatedAt": "2026-11-08T05:11:04Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWt7hdw",
+          "commit": {
+            "abbreviatedOid": "7218123"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-08T20:25:19Z",
+          "updatedAt": "2026-11-08T20:25:20Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "What does \"names the binding\" mean?",
+              "createdAt": "2026-11-08T20:25:20Z",
+              "updatedAt": "2026-11-08T20:25:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWvz6NA",
+          "commit": {
+            "abbreviatedOid": "1b63e66"
+          },
+          "author": "copilot-pull-request-reviewer",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "<!-- ccr-overview-v2 -->\n\n### \ud83d\udfe2 Approval recommended\n\nNo active review issues are reported for the live facial matching documentation change.\n\n**No open issues** \ud83c\udf89\n\n<sub>Review effort: Balanced</sub>",
+          "createdAt": "2026-11-09T03:57:52Z",
+          "updatedAt": "2026-11-09T03:57:52Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABWv5H5A",
+          "commit": {
+            "abbreviatedOid": "7218123"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-09T04:12:47Z",
+          "updatedAt": "2026-11-09T04:12:47Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "Reworded: the value now \"indicates that the person presenting was matched to the identity evidence\".",
+              "createdAt": "2026-11-09T04:12:47Z",
+              "updatedAt": "2026-11-09T04:12:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTI8nP88AAAABW4JPWQ",
+          "commit": {
+            "abbreviatedOid": "1b63e66"
+          },
+          "author": "selfissued",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-09T17:52:55Z",
+          "updatedAt": "2026-11-09T17:52:55Z",
           "comments": []
         }
       ]
