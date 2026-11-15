@@ -5,12 +5,12 @@
 Web Authorization Protocol                                    A. Agarwal
 Internet-Draft                                      Skyfire Systems Inc.
 Intended status: Standards Track                                M. Jones
-Expires: 13 May 2027                              Self-Issued Consulting
+Expires: 19 May 2027                              Self-Issued Consulting
                                                                   N. Ali
                                                                 Experian
                                                                S. Thumma
                                                                   Akamai
-                                                         9 November 2026
+                                                        15 November 2026
 
 
                   Identity Verification Methods Values
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 May 2027.
+   This Internet-Draft will expire on 19 May 2027.
 
 Copyright Notice
 
@@ -83,11 +83,13 @@ Table of Contents
        3.3.6.  "sec" (Secondary Document Verification) Method
        3.3.7.  "inp" (In-person Verification) Method
        3.3.8.  "vid" (Video Verification) Method
-       3.3.9.  "brv" (Business Registry Verification) Method
-       3.3.10. "tin" (Tax Identification Number Verification) Method
-       3.3.11. "bdoc" (Business Document Verification) Method
-       3.3.12. "bov" (Beneficial Owner Verification) Method
-       3.3.13. "rep" (Representative Verification) Method
+       3.3.9.  "lfm" (Live Facial Match to Identity Evidence) Method
+       3.3.10. "brv" (Business Registry Verification) Method
+       3.3.11. "tin" (Tax Identification Number Verification) Method
+       3.3.12. "bdoc" (Business Document Verification) Method
+       3.3.13. "bov" (Beneficial Owner Verification) Method
+       3.3.14. "rep" (Representative Verification) Method
+     3.4.  Example
    4.  Security Considerations
    5.  Privacy Considerations
    6.  IANA Considerations
@@ -228,7 +230,20 @@ Table of Contents
    vid:
       Video Verification (live video interview)
 
-3.3.9.  "brv" (Business Registry Verification) Method
+3.3.9.  "lfm" (Live Facial Match to Identity Evidence) Method
+
+   lfm:
+      Live Facial Match to Identity Evidence (automated comparison of
+      the person's face, captured live as an image or video, against the
+      portrait on the identity evidence, such as the photo in an
+      identity document, with presentation attack detection [ISO30107-1]
+      applied to the live capture; see the Identity Verification Methods
+      section of [NIST.SP.800-63A-4]).  This value indicates that the
+      person presenting was matched to the identity evidence.  It is
+      typically used together with a value for the verification of that
+      evidence itself, such as "phy" or "dig".
+
+3.3.10.  "brv" (Business Registry Verification) Method
 
    brv:
       Business Registry Verification (match of the organization's legal
@@ -236,21 +251,21 @@ Table of Contents
       register, for example a US state's business registry, such as the
       Delaware Division of Corporations, or Companies House in the UK)
 
-3.3.10.  "tin" (Tax Identification Number Verification) Method
+3.3.11.  "tin" (Tax Identification Number Verification) Method
 
    tin:
       Tax Identification Number Verification (match of the
       organization's legal name and tax identification number with the
       tax authority, for example via the US IRS TIN Matching program)
 
-3.3.11.  "bdoc" (Business Document Verification) Method
+3.3.12.  "bdoc" (Business Document Verification) Method
 
    bdoc:
       Business Document Verification (for example via a certificate of
       incorporation, a certificate of good standing, or a shareholder
       register)
 
-3.3.12.  "bov" (Beneficial Owner Verification) Method
+3.3.13.  "bov" (Beneficial Owner Verification) Method
 
    bov:
       Beneficial Owner Verification (identification of the natural
@@ -258,12 +273,28 @@ Table of Contents
       verification of each one's identity; the term follows the
       definition of beneficial owner in [FATF.Glossary])
 
-3.3.13.  "rep" (Representative Verification) Method
+3.3.14.  "rep" (Representative Verification) Method
 
    rep:
       Representative Verification (verification of the identity of the
       person acting for the organization, and of their authority to act
       for it)
+
+3.4.  Example
+
+   The following is an example JWT Claims Set for a person whose
+   physical identity document was verified and whose face, captured
+   live, was matched to the portrait on that document:
+
+   {
+     "iss": "https://server.example.com",
+     "sub": "248289761001",
+     "ivm": ["phy", "lfm"]
+   }
+
+   Without "lfm", the "ivm" claim would say only that the document was
+   verified, not that the person presenting it is the person it
+   identifies.
 
 4.  Security Considerations
 
@@ -467,7 +498,18 @@ Table of Contents
 
    *  Specification Document(s): Section 3.3.8 of this specification
 
-6.2.2.9.  "brv" Method
+6.2.2.9.  "lfm" Method
+
+   *  Identity Verification Method Name: lfm
+
+   *  Identity Verification Method Description: Live Facial Match to
+      Identity Evidence
+
+   *  Change Controller: IETF
+
+   *  Specification Document(s): Section 3.3.9 of this specification
+
+6.2.2.10.  "brv" Method
 
    *  Identity Verification Method Name: brv
 
@@ -476,9 +518,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3.9 of this specification
+   *  Specification Document(s): Section 3.3.10 of this specification
 
-6.2.2.10.  "tin" Method
+6.2.2.11.  "tin" Method
 
    *  Identity Verification Method Name: tin
 
@@ -487,9 +529,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3.10 of this specification
+   *  Specification Document(s): Section 3.3.11 of this specification
 
-6.2.2.11.  "bdoc" Method
+6.2.2.12.  "bdoc" Method
 
    *  Identity Verification Method Name: bdoc
 
@@ -498,9 +540,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3.11 of this specification
+   *  Specification Document(s): Section 3.3.12 of this specification
 
-6.2.2.12.  "bov" Method
+6.2.2.13.  "bov" Method
 
    *  Identity Verification Method Name: bov
 
@@ -509,9 +551,9 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3.12 of this specification
+   *  Specification Document(s): Section 3.3.13 of this specification
 
-6.2.2.13.  "rep" Method
+6.2.2.14.  "rep" Method
 
    *  Identity Verification Method Name: rep
 
@@ -520,7 +562,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): Section 3.3.13 of this specification
+   *  Specification Document(s): Section 3.3.14 of this specification
 
 7.  References
 
@@ -560,6 +602,18 @@ Table of Contents
               IANA, "JSON Web Token Claims",
               <https://www.iana.org/assignments/jwt>.
 
+   [ISO30107-1]
+              International Organization for Standardization,
+              "Information technology - Biometric presentation attack
+              detection - Part 1: Framework", ISO/IEC 30107-1:2023,
+              2023, <https://www.iso.org/standard/83828.html>.
+
+   [NIST.SP.800-63A-4]
+              National Institute of Standards and Technology, "Digital
+              Identity Guidelines: Identity Proofing and Enrollment",
+              NIST Special Publication 800-63A-4, August 2025,
+              <https://pages.nist.gov/800-63-4/sp800-63a.html>.
+
    [OpenID.Core]
               Sakimura, N., Bradley, J., Jones, M. B., Medeiros, B. de.,
               and C. Mortimore, "OpenID Connect Core 1.0 incorporating
@@ -592,6 +646,9 @@ Document History
    [[ to be removed by the RFC Editor before publication as an RFC ]]
 
    -04
+
+   *  Added the "lfm" (Live Facial Match to Identity Evidence) method
+      and an example of its use.
 
    *  Added the "idv_time" (Identity Verification Time) claim.
 
